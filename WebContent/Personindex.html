@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jamescss.css">
+  </head>
+
+  <body>
+    <!-- 页面框 -->
+    <div class="containers">
+      <!-- 导航栏 -->
+      <div class="navinformation navbar-fixed-top">
+        <!-- 左按钮 点击可以隐藏下面的个人信息 复击可弹出 -->
+        <span class="glyphicon glyphicon-menu-hamburger navbutton" aria-hidden="true"></span>
+        <div class="navname">
+          <span><a href="#">James P.D</span></a> <span class="navnamecut">|</span> <span>我的博客</span>
+        </div>
+        <div class="navsearch">
+          <form action="" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" size="70" placeholder="搜索我的文章">
+            </div>
+          </form>
+        </div>
+        <div class="navleft">
+          <span class="navlogin" id="login">
+          <a href="#">登陆</a>
+          </span>
+          <span class="navnamecut">|</span>
+          <span class="navregin" id="regist">
+          <a href="#">注册</a>
+          </span>
+        </div>
+
+      </div>
+      <!-- 左边导航栏 -->
+      <div class="leftnavinfo">
+        <a href="#">
+          <div class="homepage">
+            <div class="homeinfocss">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <span class="homepagecss">我的首页</span>
+            </div>
+
+          </div>
+        </a>
+        <a href="#">
+          <div class="personalinfo">
+            <div class="personalinfocss">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <span class="homepagecss">我的资料</span>
+            </div>
+
+          </div>
+        </a>
+        <a href="#">
+          <div class="personarticle">
+            <div class="personarticlecss">
+              <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+              <span class="homepagecss">我的文章</span>
+            </div>
+
+          </div>
+        </a>
+        <a href="#">
+          <div class="personimg">
+            <div class="personimgcss">
+              <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+              <span class="homepagecss">我的图片</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <!-- 弹窗用户登陆 -->
+    <div class="hide-center">
+      <div id="formhead">
+        <div id="formhead-title">
+          用户登陆
+        </div>
+        <button type="button" id="close">X</button>
+      </div>
+      <div id="formbody">
+        <div class="loginUserName">
+          用户名:<input id="input-topright-loginInput" name="userName" class="loginInput" placeholder="请输入账号" type="text">
+        </div>
+        <div class="loginPassword">
+          密码:<input id="input-bottomright-loginInput" name="password" class="loginInput" placeholder="请输入密码" type="password" style="border-bottom-right-radius:5px;">
+        </div>
+        <div id="formfoot">
+          <button id="BSignIn" type="submit">登陆</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 用户注册  用户名 密码 重复密码 性别 邮箱 验证码-->
+    <div class="registered">
+      <div class="registered-entirety">
+        <div class="registered-title">
+          用户注册
+        </div>
+        <button type="button" id="regclose">X</button>
+        <div class="registered-username">
+          <input type="text" name="username" placeholder="请输入用户名">
+        </div>
+        <div class="registered-password">
+          <input type="password" name="password" placeholder="请输入密码">
+        </div>
+        <div class="registered-repassword">
+          <input type="password" name="repassword" placeholder="请再次输入密码">
+        </div>
+        <div class="registered-sex">
+          <input type="radio" name="sex" value="">男
+          <input type="radio" name="sex" value="">女
+        </div>
+        <div class="registered-email">
+          <input type="email" name="email" placeholder="请输入邮箱">
+        </div>
+        <div class="registered-submit">
+          <button class="registered-s" type="submit">登陆</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/leftjsinfo.js"></script>
+
+
+</html>
