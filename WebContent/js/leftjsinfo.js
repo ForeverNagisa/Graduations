@@ -13,6 +13,11 @@ navbutton.onclick = function() {
   }
 }
 
+function changeCode() {
+  var img = document.getElementsByTagName("img")[0];
+  img.src = "/Graduation/code?time=" + new Date().getTime();
+}
+
 $("#login").click(function() {
   $(".hide-center").fadeIn("slow");
 })
