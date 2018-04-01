@@ -53,10 +53,8 @@
   </style>
 </head>
 <%
-
 	String msg = (String)request.getAttribute("msg");
 	/* String codes = (String) request.getSession().getAttribute("code"); */
-
 %>
 <body>
  <!-- 页面框 -->
