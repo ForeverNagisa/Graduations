@@ -53,6 +53,14 @@ body {
   top: -60px;
 }
 
+.navlogin{
+  cursor: pointer;
+}
+
+.navregin{
+  cursor: pointer;
+}
+
 /* 左边导航栏 */
 
 .leftnavinfo {

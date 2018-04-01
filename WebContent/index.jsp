@@ -12,6 +12,7 @@
 <%
 
 	String msg = (String)request.getAttribute("msg");
+	String codes = (String) request.getSession().getAttribute("code");
 
 %>
 <body>
@@ -37,11 +38,11 @@
         </div>
         <div class="navleft">
           <span class="navlogin" id="login">
-          <a href="#">登陆</a>
+          登陆
           </span>
           <span class="navnamecut">|</span>
           <span class="navregin" id="regist">
-          <a href="#">注册</a>
+          注册
           </span>
         </div>
 
@@ -70,7 +71,7 @@
 
     </div>
     <!-- 弹窗用户登陆 -->
-    <form class="" action="index.html" method="post">
+    <form class="" action="/Graduation/login" method="post">
       <div class="hide-center">
         <div id="formhead">
           <div id="formhead-title">
@@ -80,7 +81,7 @@
         </div>
         <div id="formbody">
           <div class="loginUserName">
-            用户名:<input id="input-topright-loginInput" name="userName" class="loginInput" placeholder="请输入账号" type="text">
+            用户名:<input id="input-topright-loginInput" name="username" class="loginInput" placeholder="请输入账号" type="text">
           </div>
           <div class="loginPassword">
             密码:<input id="input-bottomright-loginInput" name="password" class="loginInput" placeholder="请输入密码" type="password" style="border-bottom-right-radius:5px;">
@@ -104,10 +105,10 @@
               用户名:<input type="text" size="28" name="username" placeholder="请输入用户名">
             </div>
             <div class="registered-password">
-              密码:<input type="password" size="28" name="password" placeholder="请输入密码">
+              密码:<input type="password" id="passjudge" size="28" name="password" placeholder="请输入密码">
             </div>
             <div class="registered-repassword">
-              确认密码:<input type="password" size="28" name="repassword" placeholder="请再次输入密码">
+              确认密码:<input type="password" id="repassjudge" size="28" name="repassword" placeholder="请再次输入密码">
             </div>
             <div class="registered-sex">
               性别: <input type="radio" name="sex" value="男">男
@@ -117,15 +118,12 @@
               邮箱: <input type="email" size="28" name="email" placeholder="请输入邮箱">
             </div>
             <div class="registered-code">
-              验证码：<input type="text" size="10" name="code" />
+              验证码：<input type="text" size="10" id="regcode" name="code" />
               <img src="/Graduation/code" onclick="changeCode()" />
               <a href="javascript:changeCode()">换一张</a>
             </div>
             <div class="registered-submit" >
               <button class="registered-s" type="submit">注册</button>
-            </div>
-            <div class="registered-code" >
-              <span class="register-style" >${msg}</span>
             </div>
           </div>
         </div>
@@ -134,4 +132,13 @@
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="js/leftjsinfo.js"></script>
+  <script type="text/javascript">
+  $("#regcode").blur(function() {
+    var regcode = $(this).val();
+    var reggcodes ='<%=codes %>';
+    if(regcode != reggcodes){
+      alert("验证码输入错误");
+    }
+  });
+  </script>
 </html>
