@@ -8,11 +8,54 @@
 <title>主页</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/jamescss.css">
+  <style type="text/css">
+	  .waterfall { 
+	 	margin-left: 100px;
+	 	margin-top: 100px;
+	}
+    #gallery-wrapper {
+      position: relative;
+      max-width: 65%;
+				width: 65%;
+      margin: 50px auto;
+    }
+
+    img.thumb {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .white-panel {
+      position: absolute;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+      padding: 10px;
+    }
+
+    .white-panel h1 {
+      font-size: 1em;
+    }
+
+    .white-panel h1 a {
+      color: #A92733;
+    }
+
+    .white-panel:hover {
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+      margin-top: -5px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
 </head>
 <%
 
 	String msg = (String)request.getAttribute("msg");
-	String codes = (String) request.getSession().getAttribute("code");
+	/* String codes = (String) request.getSession().getAttribute("code"); */
 
 %>
 <body>
@@ -68,8 +111,26 @@
           </div>
         </a>
       </div>
-
-    </div>
+        <%-- 中间瀑布流布局 --%>
+        <div class="waterfall">
+          <section id="gallery-wrapper">
+            <article class="white-panel">
+              <img src="img/图2.jpg" class="thumb">
+              <h1><a href="#">Title 1</a></h1>
+              <p>Description 1</p>
+            </article>
+            <article class="white-panel">
+              <img src="img/图5.png" class="thumb">
+              <h1><a href="#">Title 2</a></h1>
+              <p>Description 2</p>
+            </article>
+            <article class="white-panel">
+              <img src="img/图6.jpg" class="thumb">
+              <h1><a href="#">Title 3</a></h1>
+              <p>Description 3</p>
+            </article>
+          </section>
+        </div>
     <!-- 弹窗用户登陆 -->
     <form class="" action="/Graduation/login" method="post">
       <div class="hide-center">
@@ -130,15 +191,30 @@
       </div>
     </form>
 </body>
+	<%
+		String codes = (String)request.getAttribute("code");
+		System.out.println(codes);
+	%>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script  type="text/javascript" src="js/pinterest_grid.js"></script>
   <script type="text/javascript" src="js/leftjsinfo.js"></script>
   <script type="text/javascript">
   $("#regcode").blur(function() {
-    var regcode = $(this).val();
+    var regcode = $("#regcode").val();
     var reggcodes ='<%=codes %>';
-    if(regcode != reggcodes){
-      alert("验证码输入错误");
+    if(regcode.toLowerCase() != reggcodes.toLowerCase()){
+		alert("验证码输入错误");
     }
+  });
+  $(function() {
+    $("#gallery-wrapper").pinterest_grid({
+      no_columns: 4,
+      padding_x: 10,
+      padding_y: 10,
+      margin_bottom: 50,
+      single_column_breakpoint: 700
+    });
+
   });
   </script>
 </html>

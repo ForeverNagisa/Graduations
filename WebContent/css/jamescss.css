@@ -53,11 +53,11 @@ body {
   top: -60px;
 }
 
-.navlogin{
+.navlogin {
   cursor: pointer;
 }
 
-.navregin{
+.navregin {
   cursor: pointer;
 }
 
@@ -263,6 +263,7 @@ body {
   position: relative;
   left: -5px;
 }
+
 .searchbtn {
   height: 38px;
   background-color: #ffffff;
@@ -316,31 +317,37 @@ body {
   font-size: 20px;
   top: -30px;
 }
-.registered .registered-username{
+
+.registered .registered-username {
   padding-left: 20px;
   padding-top: 20px;
 }
-.registered .registered-bottom{
+
+.registered .registered-bottom {
   margin-top: 30px;
   font-size: 18px;
 }
-.registered .registered-password{
+
+.registered .registered-password {
   padding-left: 37px;
   padding-top: 20px;
 }
 
-.registered .registered-repassword{
+.registered .registered-repassword {
   padding-top: 20px;
 }
-.registered .registered-sex{
-  padding-top: 20px;
-  padding-left: 37px;
-}
-.registered .registered-email{
+
+.registered .registered-sex {
   padding-top: 20px;
   padding-left: 37px;
 }
-.registered  .registered-s{
+
+.registered .registered-email {
+  padding-top: 20px;
+  padding-left: 37px;
+}
+
+.registered .registered-s {
   border: 0;
   background: rgb(61, 150, 232);
   color: #ffffff;
@@ -351,14 +358,20 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.registered .registered-submit{
+
+.registered .registered-submit {
   padding-top: 20px;
   padding-left: 60px;
 }
-.registered .registered-code{
-	padding-top: 20px;
+
+.registered .registered-code {
+  padding-top: 20px;
   padding-left: 50px;
 }
-.registered .register-style{
+
+.registered .register-style {
   color: red;
 }
+
+/* 瀑布流布局CSS */
+
