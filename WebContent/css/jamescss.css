@@ -369,9 +369,15 @@ body {
   padding-left: 50px;
 }
 
-.registered .register-style {
+.registered .register-style { 
   color: red;
 }
 
-/* 瀑布流布局CSS */
+.logininfo {
+  position: relative;
+  left: 320px; 
+  font-weight: 900;
+  font-size: 30px;
+}
 
+/* 瀑布流布局CSS */

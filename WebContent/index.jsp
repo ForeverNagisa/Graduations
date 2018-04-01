@@ -8,49 +8,7 @@
 <title>主页</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/jamescss.css">
-  <style type="text/css">
-	  .waterfall { 
-	 	margin-left: 100px;
-	 	margin-top: 100px;
-	}
-    #gallery-wrapper {
-      position: relative;
-      max-width: 65%;
-				width: 65%;
-      margin: 50px auto;
-    }
-
-    img.thumb {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .white-panel {
-      position: absolute;
-      background: white;
-      border-radius: 5px;
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-      padding: 10px;
-    }
-
-    .white-panel h1 {
-      font-size: 1em;
-    }
-
-    .white-panel h1 a {
-      color: #A92733;
-    }
-
-    .white-panel:hover {
-      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-      margin-top: -5px;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-    }
-  </style>
+<link rel="stylesheet" href="css/white.css">
 </head>
 <%
 	String msg = (String)request.getAttribute("msg");
@@ -110,22 +68,26 @@
         </a>
       </div>
         <%-- 中间瀑布流布局 --%>
+
         <div class="waterfall">
+          <div class="logininfo">
+            <span>登陆后能干什么?</span>
+          </div>
           <section id="gallery-wrapper">
             <article class="white-panel">
               <img src="img/图2.jpg" class="thumb">
-              <h1><a href="#">Title 1</a></h1>
-              <p>Description 1</p>
+              <h1><a href="#">修改自己的账号信息</a></h1>
+              <p></p>
             </article>
             <article class="white-panel">
               <img src="img/图5.png" class="thumb">
-              <h1><a href="#">Title 2</a></h1>
-              <p>Description 2</p>
+              <h1><a href="#">评论和点赞文章</a></h1>
+              <p></p>
             </article>
             <article class="white-panel">
               <img src="img/图6.jpg" class="thumb">
-              <h1><a href="#">Title 3</a></h1>
-              <p>Description 3</p>
+              <h1><a href="#">写属于自己的文章</a></h1>
+              <p></p>
             </article>
           </section>
         </div>
@@ -146,7 +108,7 @@
             密码:<input id="input-bottomright-loginInput" name="password" class="loginInput" placeholder="请输入密码" type="password" style="border-bottom-right-radius:5px;">
           </div>
           <div id="formfoot">
-            <button id="BSignIn" type="submit">登陆</button>
+            <button id="BSignIn" type="submit">登陆</button> 
           </div>
         </div>
       </div>
