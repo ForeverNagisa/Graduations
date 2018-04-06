@@ -12,7 +12,7 @@
   
   <servlet>
   <servlet-name>code</servlet-name>
-  <servlet-class>com.james.CodeServlet</servlet-class>
+  <servlet-class>com.james.servlet.CodeServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -22,7 +22,7 @@
   
   <servlet>
   <servlet-name>register</servlet-name>
-  <servlet-class>com.james.Register</servlet-class>
+  <servlet-class>com.james.servlet.RegisterServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -32,7 +32,7 @@
   <servlet>
   
   <servlet-name>login</servlet-name>
-  <servlet-class>com.james.Login</servlet-class>
+  <servlet-class>com.james.servlet.LoginServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>

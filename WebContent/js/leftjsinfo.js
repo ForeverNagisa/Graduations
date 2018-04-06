@@ -14,7 +14,7 @@ navbutton.onclick = function() {
 };
 
 function changeCode() {
-  var img = document.getElementsByTagName("img")[0];
+  var img = document.getElementById("codeimg");
   img.src = "/Graduation/code?time=" + new Date().getTime();
 }
 

@@ -1,4 +1,4 @@
-package com.james;
+package com.james.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -16,10 +16,8 @@ public class CodeServlet extends HttpServlet {
 		ValidateCode vCode = new ValidateCode(100, 30, 4, 10);
 		String code = vCode.getCode();
 		// 写到网页上(通过字节流 写回网页)
-		System.out.println(code);
 		vCode.write(response.getOutputStream());
-//		request.getSession().setAttribute("code", code);
-		request.setAttribute("code", code);
+		request.getSession().setAttribute("code", code);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

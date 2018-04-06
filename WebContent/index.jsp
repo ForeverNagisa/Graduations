@@ -10,10 +10,7 @@
 <link rel="stylesheet" href="css/jamescss.css">
 <link rel="stylesheet" href="css/white.css">
 </head>
-<%
-	String msg = (String)request.getAttribute("msg");
-	/* String codes = (String) request.getSession().getAttribute("code"); */
-%>
+
 <body>
  <!-- 页面框 -->
     <div class="containers">
@@ -75,7 +72,7 @@
           </div>
           <section id="gallery-wrapper">
             <article class="white-panel">
-              <img src="img/图2.jpg" class="thumb">
+               <img src="img/图2.jpg" class="thumb">
               <h1><a href="#">修改自己的账号信息</a></h1>
               <p></p>
             </article>
@@ -92,7 +89,7 @@
           </section>
         </div>
     <!-- 弹窗用户登陆 -->
-    <form class="" action="/Graduation/login" method="post">
+    <form class="" action="${pageContext.request.contextPath }/login" method="post">
       <div class="hide-center">
         <div id="formhead">
           <div id="formhead-title">
@@ -114,7 +111,10 @@
       </div>
     </form>
     <!-- 用户注册  用户名 密码 重复密码 性别 邮箱 验证码-->
-    <form class="" action="/Graduation/register" method="post">
+    <%
+	String codes = (String)session.getAttribute("code");
+	%>
+    <form class="" action="${pageContext.request.contextPath }/register" method="post">
       <div class="registered">
         <div class="registered-entirety">
           <div class="registered-title">
@@ -140,7 +140,7 @@
             </div>
             <div class="registered-code">
               验证码：<input type="text" size="10" id="regcode" name="code" />
-              <img src="/Graduation/code" onclick="changeCode()" />
+              <img src="/Graduation/code" id="codeimg" onclick="changeCode()" />
               <a href="javascript:changeCode()">换一张</a>
             </div>
             <div class="registered-submit" >
@@ -151,10 +151,6 @@
       </div>
     </form>
 </body>
-	<%
-		String codes = (String)request.getAttribute("code");
-		System.out.println(codes);
-	%>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script  type="text/javascript" src="js/pinterest_grid.js"></script>
   <script type="text/javascript" src="js/leftjsinfo.js"></script>
@@ -174,7 +170,6 @@
       margin_bottom: 50,
       single_column_breakpoint: 700
     });
-
   });
   </script>
-</html>
+</html> 
