@@ -291,8 +291,8 @@ body {
 
 .registered-entirety {
   border-radius: 10px;
-  width: 400px;
-  height: 500px;
+  width: 400px; 
+  height: 450px;
   background-color: rgb(227, 222, 224);
 }
 
@@ -369,13 +369,13 @@ body {
   padding-left: 50px;
 }
 
-.registered .register-style { 
+.registered .register-style {
   color: red;
 }
 
 .logininfo {
   position: relative;
-  left: 320px; 
+  left: 320px;
   font-weight: 900;
   font-size: 30px;
 }

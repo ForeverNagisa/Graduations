@@ -21,6 +21,10 @@ function changeCode() {
 $("#login").click(function() {
   $(".hide-center").fadeIn("slow");
 });
+$("#myinfo").click(function() {
+  console.log("1234")
+  $(".registered").fadeIn("slow"); 
+});
 $("#close").click(function() {
   $(".hide-center").fadeOut("slow");
 });

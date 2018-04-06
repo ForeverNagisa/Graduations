@@ -1,4 +1,7 @@
 package com.james.servlet;
+/*
+ * 修改个人信息
+ */
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,18 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.dsna.util.images.ValidateCode;
-
-public class CodeServlet extends HttpServlet {
+public class AlterServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		ValidateCode vCode = new ValidateCode(100, 30, 4, 10);
-		String code = vCode.getCode();
-		// 写到网页上(通过字节流 写回网页)
-		vCode.write(response.getOutputStream());
-		System.out.println(code);
+		
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

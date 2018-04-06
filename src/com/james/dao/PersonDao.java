@@ -33,4 +33,12 @@ public interface PersonDao {
 	 * @throws SQLException
 	 */
 	public boolean loginPerson(Person person) throws SQLException ;
+	
+	/**
+	 * 用户信息修改
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean alterPerson(String[] id) throws SQLException;
 }

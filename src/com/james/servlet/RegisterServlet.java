@@ -32,9 +32,11 @@ public class RegisterServlet extends HttpServlet {
 		boolean isRegister = service.register(person);
 		if (isRegister) {
 			// 注册成功
+			request.setAttribute("msg", "注册成功!");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}else {
 			// 注册失败
+			request.setAttribute("msg", "注册失败,请重新注册!");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 	}

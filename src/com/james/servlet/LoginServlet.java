@@ -32,8 +32,12 @@ public class LoginServlet extends HttpServlet {
 		PersonService service = new PersonServiceImpl();
 		boolean login = service.login(person);
 		if (login) {
+			// 登录成功
+			request.getSession().setAttribute("username", person);
 			response.setHeader("refresh", "0;url=" + request.getContextPath() + "/Personindex.jsp");
 		}else {
+			// 登录失败 
+			request.setAttribute("msg", "登录失败,用户名或密码错误");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 	}

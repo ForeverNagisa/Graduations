@@ -55,4 +55,10 @@ public class PersonDaoImpl implements PersonDao {
 		}
 		return true;
 	}
+
+	@Override
+	public boolean alterPerson(String[] id) throws SQLException {
+		String sql = "";
+		return false;
+	}
 }
