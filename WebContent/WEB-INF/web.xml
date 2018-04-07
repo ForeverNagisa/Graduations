@@ -39,4 +39,24 @@
   <servlet-name>login</servlet-name>
   <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>alterPerson</servlet-name>
+  <servlet-class>com.james.servlet.AlterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>alterPerson</servlet-name>
+  <url-pattern>/alterPerson</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>cancellation</servlet-name>
+  <servlet-class>com.james.servlet.CancellationServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>cancellation</servlet-name>
+  <url-pattern>/cancellation</url-pattern>
+  </servlet-mapping>
 </web-app>

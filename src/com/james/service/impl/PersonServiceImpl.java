@@ -37,6 +37,19 @@ public class PersonServiceImpl implements PersonService{
 		// 返回false 登陆失败 true登陆成功
 		return isLogin;
 	}
+
+	// 修改用户信息
+	@Override
+	public boolean alterPeson(String name, Person person) {
+		boolean isAlter = false;
+		try {
+			isAlter = dao.alterPerson(name, person);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return isAlter;
+	}
 	
 	
 }

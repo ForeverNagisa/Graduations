@@ -40,5 +40,5 @@ public interface PersonDao {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean alterPerson(String[] id) throws SQLException;
+	public boolean alterPerson(String name,Person person) throws SQLException;
 }

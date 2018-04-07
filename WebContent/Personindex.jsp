@@ -31,7 +31,11 @@
 					</div>
 				</form>
 			</div>
-
+			<div class="navleft">
+				<span class="Headimg"> <img src="img/heand.jpg"
+					class="img-circle">
+				</span><span class="navnamecut">|</span><a href="${pageContext.request.contextPath }/cancellation"> <span> 注销登陆 </span></a>
+			</div>
 		</div>
 		<!-- 左边导航栏 -->
 		<div class="leftnavinfo">
@@ -45,7 +49,7 @@
 				</div>
 			</a> <a href="#">
 				<div class="personalinfo" id="myinfo">
-					<div class="personalinfocss" >
+					<div class="personalinfocss">
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 						<span class="homepagecss">我的资料</span>
 					</div>
@@ -69,10 +73,19 @@
 			</a>
 		</div>
 
+		<%-- 右下角编辑文章图标 --%>
+		<div class="editor-article" id="article">
+			<div class="circular-button" >
+				<span class="glyphicon glyphicon-pencil pencilcss"></span>
+			</div>
+		</div>
+
 	</div>
 
 	<%-- 修该个人信息 --%>
-	<form class="" action="" method="post">
+	<form class=""
+		action="${pageContext.request.contextPath }/alterPerson?id=${username.username }"
+		method="post">
 		<div class="registered">
 			<div class="registered-entirety">
 				<div class="registered-title">修改您的个人信息</div>
@@ -95,12 +108,37 @@
 							type="radio" name="sex" value="女">女
 					</div>
 					<div class="registered-submit">
-						<button class="registered-s" type="submit">注册</button>
+						<button class="registered-s" type="submit">修改</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
+
+	<%-- 编写文章弹窗 --%>
+	<form class="" action="" method="post">
+		<div class="article-page">
+			<div class="article-pagebody">
+				<div class="registered-title">编辑属于你的文章</div>
+				<button type="button" id="article-close">X</button>
+				<div class="article-bottom">
+					<div class="article-username">
+						文章标题:<input type="text" size="28" name="article">
+					</div>
+					<div class="article-body">
+						<textarea placeholder="在这里输入你的文章内容" name="name" rows="8" cols="60"></textarea>
+					</div>
+					<div class="upload-picture">
+						<span class="glyphicon glyphicon-picture"></span>
+					</div>
+					<div class="article-submit">
+						<input class="article-s" disabled="true" value="发表" type="submit">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
 
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>

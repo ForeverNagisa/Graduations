@@ -19,9 +19,11 @@ public class LoginServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		
 		Person person = new Person();
 		try {
 			BeanUtils.populate(person, request.getParameterMap());
+			
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 			response.setHeader("refresh", "0;url=" + request.getContextPath() + "/Personindex.jsp");
 		}else {
 			// 登录失败 
-			request.setAttribute("msg", "登录失败,用户名或密码错误");
+			request.setAttribute("msg", "登录失败 用户名或密码错误");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 	}

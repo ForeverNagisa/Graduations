@@ -291,7 +291,7 @@ body {
 
 .registered-entirety {
   border-radius: 10px;
-  width: 400px; 
+  width: 400px;
   height: 450px;
   background-color: rgb(227, 222, 224);
 }
@@ -380,4 +380,85 @@ body {
   font-size: 30px;
 }
 
-/* 瀑布流布局CSS */
+/* 右下角编辑文章css */
+.editor-article{
+  position: absolute;
+  left: 1800px;
+  top: 800px;
+  cursor: pointer;
+}
+.circular-button{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #db4437;
+}
+.circular-button .pencilcss{
+  position: relative;
+  left:15px;
+  top:15px;
+  font-size: 20px;
+  color:white;
+}
+
+
+/* 文章编辑弹窗css */
+.article-page {
+  width:600px;
+  height: 600px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  display: none;
+  z-index: 10;
+}
+
+.article-pagebody {
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  background-color: rgb(227, 222, 224);
+}
+
+.article-page #article-close {
+  width: 35px;
+  height: 20px;
+  border: 0;
+  border-radius: 20%;
+  background-color: rgb(227, 222, 224);
+  color: rgb(199, 43, 43);
+  display: inline-block;
+  position: relative;
+  left: 550px;
+  font-size: 20px;
+  top: -10px;
+}
+.article-username{
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 20px;
+
+}
+.article-body{
+  padding-top: 10px;
+  padding-left: 107px;
+}
+
+.article-page .upload-picture{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 107px;
+}
+.article-submit{
+  padding-left: 500px;
+  font-size: 20px;
+}
+.article-submit .article-s{ 
+  cursor: pointer;
+  border-radius: 20%;
+  border: 0;
+  background-color: rgb(227, 222, 224);
+}

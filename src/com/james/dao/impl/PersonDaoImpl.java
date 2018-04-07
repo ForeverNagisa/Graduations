@@ -20,13 +20,13 @@ public class PersonDaoImpl implements PersonDao {
 		if (isRegist) {
 			// 返回ture 表示没有被注册
 			String sql = "insert into person values(Null,?,?,?,?)";
-			int row = qr.update(sql, person.getUsername(),person.getPassword(),person.getSex(),person.getEmail());
+			int row = qr.update(sql, person.getUsername(), person.getPassword(), person.getSex(), person.getEmail());
 			if (row > 0) {
 				// 插入成功
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 
@@ -35,30 +35,36 @@ public class PersonDaoImpl implements PersonDao {
 	public boolean findUserName(Person person) throws SQLException {
 
 		String sql = "select * from person where username = ?";
-		Person p = qr.query(sql, new BeanHandler<>(Person.class),person.getUsername());
+		Person p = qr.query(sql, new BeanHandler<>(Person.class), person.getUsername());
 		if (p == null) {
-			// 用户名查无此人 
+			// 用户名查无此人
 			return true;
 		}
 		return false;
 	}
-	
+
 	// 用户登录
 	@Override
 	public boolean loginPerson(Person person) throws SQLException {
-		
+
 		String sql = "select * from person where username = ? and password = ?";
-		Person p = qr.query(sql, new BeanHandler<>(Person.class),person.getUsername(),person.getPassword());
+		Person p = qr.query(sql, new BeanHandler<>(Person.class), person.getUsername(), person.getPassword());
 		if (p == null) {
-			// 登录失败 
+			// 登录失败
 			return false;
 		}
 		return true;
 	}
 
+	// 修改用户数据
 	@Override
-	public boolean alterPerson(String[] id) throws SQLException {
-		String sql = "";
+	public boolean alterPerson(String name, Person person) throws SQLException {
+		String sql = "update person set username=?,password=?,sex=? where username='" + name + "'";
+		int row = qr.update(sql, person.getUsername(), person.getPassword(), person.getSex());
+		if (row > 0) {
+			// 修改成功
+			return true;
+		}
 		return false;
 	}
 }

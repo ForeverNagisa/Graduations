@@ -22,18 +22,26 @@ $("#login").click(function() {
   $(".hide-center").fadeIn("slow");
 });
 $("#myinfo").click(function() {
-  console.log("1234")
-  $(".registered").fadeIn("slow"); 
+  $(".registered").fadeIn("slow");
 });
+
 $("#close").click(function() {
   $(".hide-center").fadeOut("slow");
 });
 $("#regist").click(function() {
   $(".registered").fadeIn("slow");
 });
-$("#regclose").click(function() {
-  $(".registered").fadeOut("slow");
+
+$("#article").click(function() {
+  $(".article-page").fadeIn("slow");
 });
+$("#article-close").click(function() {
+  $(".article-page").fadeOut("slow");
+});
+if ($('#article-ti').val() != null) {
+  $('.article-s').disabled = true;  
+}
+
 var password;
 var repassword;
 $("#passjudge").blur(function() {
