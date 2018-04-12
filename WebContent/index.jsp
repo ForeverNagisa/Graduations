@@ -26,7 +26,7 @@
 				<form action="" class="navbar-form navbar-left" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" size="70"
-							placeholder="搜索我的文章"> <span class="gosearch">
+							placeholder="搜索文章"> <span class="gosearch">
 							<button class="searchbtn" type="button">搜索</button>
 						</span>
 					</div>
@@ -61,30 +61,34 @@
 		</div>
 		<%-- 中间瀑布流布局 --%>
 		<div class="msginfo">${msg }</div>
-
 		<div class="waterfall">
 			<div class="logininfo">
 				<span>登陆后能干什么?</span>
 			</div>
-			<section id="gallery-wrapper"> <article class="white-panel">
-			<img src="img/图2.jpg" class="thumb">
+			<section id="gallery-wrapper">
+		 <article class="white-panel">
 			<h1>
-				<a href="#">修改自己的账号信息</a>
+				修改自己的账号信息
 			</h1>
-			<p></p>
-			</article> <article class="white-panel"> <img src="img/图5.png"
-				class="thumb">
+			<img src="img/1.jpg" class="thumb">
+			</article> <article class="white-panel">
 			<h1>
-				<a href="#">评论和点赞文章</a>
+				评论和点赞文章
 			</h1>
-			<p></p>
-			</article> <article class="white-panel"> <img src="img/图6.jpg"
-				class="thumb">
+			<img src="img/2.jpg" class="thumb">
+			</article> <article class="white-panel">
 			<h1>
-				<a href="#">写属于自己的文章</a>
+				写属于自己的文章
 			</h1>
-			<p></p>
-			</article> </section>
+		<img src="img/3.jpg" class="thumb">
+			</article>
+			<article class="white-panel">
+			<h1>
+				快点登陆吧~
+			</h1>
+			<img src="img/4.jpg" class="thumb">
+			</article>
+			 </section>
 		</div>
 		<!-- 弹窗用户登陆 -->
 		<form class="" action="${pageContext.request.contextPath }/login"

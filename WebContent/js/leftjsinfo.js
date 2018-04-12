@@ -28,6 +28,9 @@ $("#myinfo").click(function() {
 $("#close").click(function() {
   $(".hide-center").fadeOut("slow");
 });
+$("#regclose").click(function() {
+  $(".registered").fadeOut("slow");
+});
 $("#regist").click(function() {
   $(".registered").fadeIn("slow");
 });
@@ -39,8 +42,16 @@ $("#article-close").click(function() {
   $(".article-page").fadeOut("slow");
 });
 if ($('#article-ti').val() != null) {
-  $('.article-s').disabled = true;  
+  $('.article-s').disabled = true;
 }
+
+// 上传头像弹窗 
+$('#upheandimg').click(function() {
+  $('.heand-img').fadeIn('slow');
+});
+$("#head-close").click(function() {
+  $(".heand-img").fadeOut("slow");
+});
 
 var password;
 var repassword;

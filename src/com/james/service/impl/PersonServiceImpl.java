@@ -50,6 +50,18 @@ public class PersonServiceImpl implements PersonService{
 		}
 		return isAlter;
 	}
+
+	@Override
+	public String getHeadimg(Person person) {
+		String img = "";
+		try {
+			img = dao.getHeadimg(person);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return img;
+	}
 	
 	
 }

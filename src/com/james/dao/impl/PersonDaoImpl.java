@@ -3,6 +3,7 @@ package com.james.dao.impl;
 import java.sql.SQLException;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.james.bean.Person;
 import com.james.dao.PersonDao;
@@ -67,4 +68,13 @@ public class PersonDaoImpl implements PersonDao {
 		}
 		return false;
 	}
+
+	// 查询用户头像地址
+	@Override
+	public String getHeadimg(Person person) throws SQLException  {
+		String sql = "select headimg from person where username =?";
+		String query = qr.query(sql, new ScalarHandler<>(),person.getUsername()); 
+		return query;
+	}
+
 }

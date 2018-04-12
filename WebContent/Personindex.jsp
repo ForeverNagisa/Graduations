@@ -32,7 +32,7 @@
 				</form>
 			</div>
 			<div class="navleft">
-				<span class="Headimg"> <img src="img/heand.jpg"
+				<span class="Headimg" title="点击更换头像" id="upheandimg"> <img src="upimg/${empty username.headimg ? "default.png" : username.headimg }"
 					class="img-circle">
 				</span><span class="navnamecut">|</span><a href="${pageContext.request.contextPath }/cancellation"> <span> 注销登陆 </span></a>
 			</div>
@@ -107,6 +107,8 @@
 						性别: <input type="radio" name="sex" value="男">男 <input
 							type="radio" name="sex" value="女">女
 					</div>
+
+
 					<div class="registered-submit">
 						<button class="registered-s" type="submit">修改</button>
 					</div>
@@ -128,9 +130,10 @@
 					<div class="article-body">
 						<textarea placeholder="在这里输入你的文章内容" name="name" rows="8" cols="60"></textarea>
 					</div>
-					<div class="upload-picture">
+					<div class="upload-picture" title="添加图片">
 						<span class="glyphicon glyphicon-picture"></span>
 					</div>
+
 					<div class="article-submit">
 						<input class="article-s" disabled="true" value="发表" type="submit">
 					</div>
@@ -138,6 +141,24 @@
 			</div>
 		</div>
 	</form>
+
+<%-- 更改头像弹窗 --%>
+<form class="" action="${pageContext.request.contextPath }/upPerson" method="post" enctype="multipart/form-data">
+	<div class="heand-img">
+		<div class="heand-body">
+			<div class="registered-title">上传属于你的头像</div>
+			<button type="button" id="head-close">X</button>
+			<div class="heand-bottom">
+				<div class="article-username">
+					上传头像:<input type="file" name="uploadFile">
+				</div>
+			<div class="heand-submit">
+					<input class="heand-s"  value="上传" type="submit">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
 
 
 </body>

@@ -6,6 +6,7 @@ public class Person {
 	private String password;
 	private String sex;
 	private String email;
+	private String headimg;
 	public Person() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -19,6 +20,17 @@ public class Person {
 		this.password = password;
 		this.sex = sex;
 		this.email = email;
+	}
+
+
+	
+	public String getHeadimg() {
+		return headimg;
+	}
+
+
+	public void setHeadimg(String headimg) {
+		this.headimg = headimg;
 	}
 
 

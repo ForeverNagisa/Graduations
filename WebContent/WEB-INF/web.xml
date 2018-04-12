@@ -59,4 +59,14 @@
   <servlet-name>cancellation</servlet-name>
   <url-pattern>/cancellation</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>upPerson</servlet-name>
+  <servlet-class>com.james.servlet.UpPersonHeandImg</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>upPerson</servlet-name>
+  <url-pattern>/upPerson</url-pattern>
+  </servlet-mapping>
 </web-app>

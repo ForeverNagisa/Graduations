@@ -12,4 +12,7 @@ public interface PersonService {
 
 	// 修改用户信息
 	public boolean alterPeson(String name, Person person);
+
+	// 查询用户头像地址
+	public String getHeadimg(Person person);
 }

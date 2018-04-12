@@ -41,4 +41,14 @@ public interface PersonDao {
 	 * @throws SQLException
 	 */
 	public boolean alterPerson(String name,Person person) throws SQLException;
+
+	/**
+	 * 查询用户头像地址
+	 * @param person
+	 * @return
+	 */
+	public String getHeadimg(Person person) throws SQLException;
+	
+	
+
 }

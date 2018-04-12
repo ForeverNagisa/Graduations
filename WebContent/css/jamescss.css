@@ -47,7 +47,7 @@ body {
   color: rgb(200, 197, 201);
 }
 
-.navsearch {
+.navsearch { 
   position: relative;
   left: 500px;
   top: -60px;
@@ -155,6 +155,7 @@ body {
   right: 30px;
   float: right;
   font-size: 26px;
+
 }
 
 .navleft a {
@@ -162,6 +163,9 @@ body {
   text-decoration: none;
 }
 
+.Headimg{
+  cursor: pointer;
+}
 /*
 
   登陆
@@ -374,7 +378,7 @@ body {
 }
 
 .logininfo {
-  position: relative;
+  position: absolute;
   left: 320px;
   font-weight: 900;
   font-size: 30px;
@@ -456,9 +460,52 @@ body {
   padding-left: 500px;
   font-size: 20px;
 }
-.article-submit .article-s{ 
+.article-submit .article-s{
   cursor: pointer;
   border-radius: 20%;
   border: 0;
   background-color: rgb(227, 222, 224);
+}
+
+/* 上传头像弹框 */
+.heand-img{
+  width:600px;
+  height: 600px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  display: none;
+  z-index: 10;
+}
+.heand-body{
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  background-color: rgb(227, 222, 224);
+}
+
+#head-close{
+  width: 35px;
+  height: 20px;
+  border: 0;
+  border-radius: 20%;
+  background-color: rgb(227, 222, 224);
+  color: rgb(199, 43, 43);
+  display: inline-block;
+  position: relative;
+  left: 250px;
+  font-size: 20px;
+  top: -10px;
+}
+.heand-submit{
+  position: relative;
+  top:25px; 
+  left:20px;
+}
+.heand-s{
+  cursor: pointer;
+  border-radius: 20%;
 }

@@ -33,9 +33,12 @@ public class LoginServlet extends HttpServlet {
 		}
 		PersonService service = new PersonServiceImpl();
 		boolean login = service.login(person);
+		String headimg = service.getHeadimg(person);
+		System.out.println(headimg);
 		if (login) {
 			// 登录成功
-			request.getSession().setAttribute("username", person);
+			person.setHeadimg(headimg);
+			request.getSession().setAttribute("username", person);		
 			response.setHeader("refresh", "0;url=" + request.getContextPath() + "/Personindex.jsp");
 		}else {
 			// 登录失败 

@@ -1,7 +1,6 @@
 /*
 
 账号信息
-
  */
 
 .msginfo {
@@ -9,7 +8,7 @@
   top: 100px;
   left: 800px;
   font-size: 26px;
-  font-weight: 500; 
+  font-weight: 500;
   color:red;
 }
 
@@ -20,13 +19,12 @@
  */
 
 .waterfall {
-  margin-left: 100px;
+  margin-left: 320px;
   margin-top: 150px;
-  
 }
 
 #gallery-wrapper {
-  position: relative;
+  position: absolute;
   max-width: 65%;
   width: 65%;
   margin: 50px auto;
