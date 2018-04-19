@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
 		PersonService service = new PersonServiceImpl();
 		boolean login = service.login(person);
 		String headimg = service.getHeadimg(person);
-		System.out.println(headimg);
 		if (login) {
 			// 登录成功
 			person.setHeadimg(headimg);

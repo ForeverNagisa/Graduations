@@ -142,11 +142,11 @@
 							邮箱: <input type="email" size="28" name="email"
 								placeholder="请输入邮箱">
 						</div>
-						<!-- 暂时冻结这个功能 -->
-						<%-- 	<div class="registered-code">
+
+						<%-- <div class="registered-code">
 							验证码：<input type="text" size="10" id="regcode" name="code" /> <img
 								src="/Graduation/code" id="codeimg" onclick="changeCode()" /> <a
-								href="javascript:changeCode()">换一张</a> <span id="codeimgs">${code }</span>
+								href="javascript:changeCode()">换一张</a>
 						</div> --%>
 						<div class="registered-submit">
 							<button class="registered-s" type="submit">注册</button>
@@ -160,15 +160,15 @@
 <script type="text/javascript" src="js/pinterest_grid.js"></script>
 <script type="text/javascript" src="js/leftjsinfo.js"></script>
 <script type="text/javascript">
-	/* 	$("#regcode").blur(function() {
-	 var regcode = $("#regcode").val();
-	 var codeimgs = $("#codeimgs").val();
-	 console.log(codeimgs);
-	 var reggcodes = codeimgs;
-	 if (regcode.toLowerCase() != reggcodes.toLowerCase()) {
-	 alert("验证码输入错误");
-	 }
-	 }); */
+		// $("#regcode").blur(function() {
+	 //
+	 // var yancode = $('#regcode').val();
+	 // console.log(yancode);
+	 //
+	 // if ("${code }".toLowerCase() != yancode.toLowerCase()) {
+	 // alert("验证码输入错误");
+	 // }
+	 // });
 	$(function() {
 		$("#gallery-wrapper").pinterest_grid({
 			no_columns : 4,

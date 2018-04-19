@@ -46,7 +46,6 @@ public class AlterServlet extends HttpServlet {
 			response.getWriter().write("修改失败");
 			response.setHeader("refresh", "1;url=" + request.getContextPath() + "/Personindex.jsp");
 		}
-		
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

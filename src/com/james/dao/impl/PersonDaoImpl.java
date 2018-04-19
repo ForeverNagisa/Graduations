@@ -20,7 +20,7 @@ public class PersonDaoImpl implements PersonDao {
 		boolean isRegist = findUserName(person);
 		if (isRegist) {
 			// 返回ture 表示没有被注册
-			String sql = "insert into person values(Null,?,?,?,?)";
+			String sql = "insert into person(username,password,sex,email) values(?,?,?,?)";
 			int row = qr.update(sql, person.getUsername(), person.getPassword(), person.getSex(), person.getEmail());
 			if (row > 0) {
 				// 插入成功

@@ -17,6 +17,7 @@ public class CodeServlet extends HttpServlet {
 		String code = vCode.getCode();
 		// 写到网页上(通过字节流 写回网页)
 		vCode.write(response.getOutputStream());
+		request.setAttribute("code", code);
 		System.out.println(code);
 	}
 
