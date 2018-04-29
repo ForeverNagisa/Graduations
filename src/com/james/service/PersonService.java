@@ -16,4 +16,6 @@ public interface PersonService {
 	void updatePersonInfo(Person person);
 
     void upPersonimgs(String newFileName, Integer id);
+
+	String  getPersonImg(Person person);
 }

@@ -22,4 +22,6 @@ public interface PersonDao {
 	void updatePersonInfo(Person person);
 
     void upPersonimgs(@Param("newFileName") String newFileName,@Param("id") Integer id);
+
+	String getPersonImg(Person person);
 }

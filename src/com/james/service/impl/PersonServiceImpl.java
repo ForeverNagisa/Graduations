@@ -34,14 +34,23 @@ public class PersonServiceImpl implements PersonService{
 
 	}
 
+	// 修改用户信息
 	@Override
 	public void updatePersonInfo(Person person) {
 		System.out.println(person);
 		dao.updatePersonInfo(person);
 	}
 
+	// 上传用户头像
 	@Override
 	public void upPersonimgs(String newFileName, Integer id) {
 		dao.upPersonimgs(newFileName,id);
+	}
+
+	// 查找头像
+
+	@Override
+	public String getPersonImg(Person person) {
+		return dao.getPersonImg(person);
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -28,6 +29,8 @@ public class PersonController {
         Person persons = service.loginPerson(person);
 
         if (persons != null){
+            String personImg = service.getPersonImg(person);
+            persons.setHeadimg(personImg);
             session.setAttribute("persons",persons);
             return "redirect:Personindex.jsp";
         }else {
@@ -66,19 +69,23 @@ public class PersonController {
 
     // 上传头像
     @RequestMapping("upPersonimgs.action")
-    public String upPersonimgs(@RequestParam("file") MultipartFile file, HttpServletRequest request,Integer id) throws IOException {
+    public ModelAndView upPersonimgs(@RequestParam("file") MultipartFile file, HttpServletRequest request, Integer id) throws IOException {
+        ModelAndView mv = new ModelAndView();
         if (!file.isEmpty()){
-            String realPath = request.getServletContext().getRealPath("/upimg/");
+            String realPath = "/Users/lanou/Desktop/java/javaweb/Graduation/WebContent/upimg/";
             String fileName = file.getOriginalFilename();
             String suffix = fileName.substring(fileName.lastIndexOf('.'));
             String newFileName = new Date().getTime() + suffix;
             System.out.println("新文件名：" + newFileName);
             service.upPersonimgs(newFileName,id);
             file.transferTo(new File(realPath + File.separator + newFileName));
-            return "Personindex.jsp";
+            request.getSession().setAttribute("imgpath",newFileName);
+            mv.setViewName("redirect:/Personindex.jsp");
+            return mv;
         }
         request.setAttribute("errormsg","文件上传错误");
-        return "Personindex.jsp";
+        mv.setViewName("redirect:/Personindex.jsp");
+        return mv;
 
     }
 }

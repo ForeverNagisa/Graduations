@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,14 +33,22 @@
 				</form>
 			</div>
 			<div class="navleft">
-				<span class="Headimg" title="点击更换头像" id="upheandimg"> <img src="upimg/${empty persons.headimg ? "default.png" : persons.headimg }"
-					class="img-circle">
+				<span class="Headimg" title="点击更换头像" id="upheandimg">
+					<c:if test="${!empty imgpath}">
+						<img src="upimg/${imgpath }"
+							 class="img-circle">
+					</c:if>
+					<c:if test="${empty imgpath}">
+						<img src="upimg/${empty persons.headimg ? "default.png" : persons.headimg }"
+							 class="img-circle">
+					</c:if>
+
 				</span><span class="navnamecut">|</span><a href="logonlogon.action"> <span> 注销登陆 </span></a>
 			</div>
 		</div>
 		<!-- 左边导航栏 -->
 		<div class="leftnavinfo">
-			<a href="#">
+			<a href="Personindex.jsp">
 				<div class="homepage">
 					<div class="homeinfocss">
 						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>

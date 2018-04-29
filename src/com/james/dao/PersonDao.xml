@@ -21,4 +21,8 @@
    <update id="upPersonimgs">
        update person set headimg=#{newFileName} where id=#{id}
    </update>
+
+    <select id="getPersonImg" resultType="java.lang.String">
+        select headimg from person where username=#{username}
+    </select>
 </mapper>
