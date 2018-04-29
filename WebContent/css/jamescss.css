@@ -166,6 +166,16 @@ body {
 .Headimg{
   cursor: pointer;
 }
+
+.netinfo{
+    position: absolute;
+    top: 700px;
+    left: 20px;
+}
+.netinfo p{
+  font-size: 12px;
+  color: #676767;
+}
 /*
 
   登陆
@@ -281,8 +291,8 @@ body {
  */
 
 .registered {
-  width: 308px;
-  height: 600px;
+  width: 600px;
+  height: 500px;
   position: absolute;
   right: 0;
   left: 0;
@@ -469,8 +479,8 @@ body {
 
 /* 上传头像弹框 */
 .heand-img{
-  width:600px;
-  height: 600px;
+  width:400px;
+  height: 400px;
   position: absolute;
   right: 0;
   left: 0;
@@ -508,4 +518,51 @@ body {
 .heand-s{
   cursor: pointer;
   border-radius: 20%;
+}
+
+
+/*
+  关于我们
+
+*/
+
+.win-about-us{
+  width:550px;
+  height: 400px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  display: none;
+  z-index: 10;
+}
+
+#about-close{
+  width: 35px;
+  height: 20px;
+  border: 0;
+  border-radius: 20%;
+  background-color: rgb(227, 222, 224);
+  color: rgb(199, 43, 43);
+  display: inline-block;
+  position: relative;
+  left: 250px;
+  font-size: 20px;
+  top: -10px;
+}
+.about-body{
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  background-color: rgb(227, 222, 224);
+}
+.about-bottom{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.about-bottom p{
+  font-size: 18px;
+  color: #ff6e78;
 }

@@ -18,7 +18,7 @@
 			<span class="glyphicon glyphicon-menu-hamburger navbutton"
 				aria-hidden="true"></span>
 			<div class="navname">
-				<span><a href="#">${username.username }</span></a> <span
+				<span><a href="#">${persons.username }</span></a> <span
 					class="navnamecut">|</span> <span>我的博客</span>
 			</div>
 			<div class="navsearch">
@@ -32,9 +32,9 @@
 				</form>
 			</div>
 			<div class="navleft">
-				<span class="Headimg" title="点击更换头像" id="upheandimg"> <img src="upimg/${empty username.headimg ? "default.png" : username.headimg }"
+				<span class="Headimg" title="点击更换头像" id="upheandimg"> <img src="upimg/${empty persons.headimg ? "default.png" : persons.headimg }"
 					class="img-circle">
-				</span><span class="navnamecut">|</span><a href="${pageContext.request.contextPath }/cancellation"> <span> 注销登陆 </span></a>
+				</span><span class="navnamecut">|</span><a href="logonlogon.action"> <span> 注销登陆 </span></a>
 			</div>
 		</div>
 		<!-- 左边导航栏 -->
@@ -83,8 +83,8 @@
 	</div>
 
 	<%-- 修该个人信息 --%>
-	<form class=""
-		action="${pageContext.request.contextPath }/alterPerson?id=${username.username }"
+	<form
+		action="updatePersonInfo.action"
 		method="post">
 		<div class="registered">
 			<div class="registered-entirety">
@@ -93,24 +93,23 @@
 				<div class="registered-bottom">
 					<div class="registered-username">
 						用户名:<input type="text" size="28" name="username"
-							value="${username.username }">
+							value="${persons.username }">
+						<input type="text" value="${persons.id}" name="id" style="display:none;">
 					</div>
 					<div class="registered-password">
 						密码:<input type="password" id="passjudge" size="28" name="password"
-							value="${username.password }">
+							value="${persons.password }">
 					</div>
 					<div class="registered-repassword">
 						确认密码:<input type="password" id="repassjudge" size="28"
-							name="repassword" value="${username.password }">
+							name="repassword" value="${persons.password }">
 					</div>
 					<div class="registered-sex">
 						性别: <input type="radio" name="sex" value="男">男 <input
 							type="radio" name="sex" value="女">女
 					</div>
-
-
 					<div class="registered-submit">
-						<button class="registered-s" type="submit">修改</button>
+						<input class="registered-s" type="submit" value="修改" />
 					</div>
 				</div>
 			</div>
@@ -143,15 +142,16 @@
 	</form>
 
 <%-- 更改头像弹窗 --%>
-<form class="" action="${pageContext.request.contextPath }/upPerson" method="post" enctype="multipart/form-data">
+<form class="" action="upPersonimgs.action" method="post" enctype="multipart/form-data">
 	<div class="heand-img">
 		<div class="heand-body">
 			<div class="registered-title">上传属于你的头像</div>
 			<button type="button" id="head-close">X</button>
 			<div class="heand-bottom">
 				<div class="article-username">
-					上传头像:<input type="file" name="uploadFile">
+					上传头像:<input type="file" name="file">
 				</div>
+				<input type="text" value="${persons.id}" name="id" style="display:none;">
 			<div class="heand-submit">
 					<input class="heand-s"  value="上传" type="submit">
 				</div>

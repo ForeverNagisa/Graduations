@@ -1,67 +1,47 @@
 package com.james.service.impl;
 
-import java.sql.SQLException;
 
 import com.james.bean.Person;
 import com.james.dao.PersonDao;
-import com.james.dao.impl.PersonDaoImpl;
 import com.james.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PersonServiceImpl implements PersonService{
-	private PersonDao dao = new PersonDaoImpl();
 
-	// 注册处理
+	@Autowired
+	private PersonDao dao;
+
+	// 用户登录请求
 	@Override
-	public boolean register(Person person) {
-		
-		boolean isRegister = false;
-		try {
-			 isRegister = dao.RegisterUser(person);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return isRegister;
+	public Person loginPerson(Person person) {
+		return dao.loginPerson(person);
 	}
 
-	// 登录处理
-	@Override
-	public boolean login(Person person) {
-		boolean isLogin = false;
-		
-		try {
-			isLogin = dao.loginPerson(person);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		// 返回false 登陆失败 true登陆成功
-		return isLogin;
-	}
 
-	// 修改用户信息
+	// 用户注册请求
 	@Override
-	public boolean alterPeson(String name, Person person) {
-		boolean isAlter = false;
-		try {
-			isAlter = dao.alterPerson(name, person);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public boolean registerPerson(Person person) {
+		// 根据用户提供名字检查是否注册过
+		Person persons = dao.selectPersonByName(person.getUsername());
+		if (persons != null){
+			// 走到这 说明用户名被占用
+			return false;
 		}
-		return isAlter;
+		dao.registerPerson(person);
+		return true;
+
 	}
 
 	@Override
-	public String getHeadimg(Person person) {
-		String img = "";
-		try {
-			img = dao.getHeadimg(person);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return img;
+	public void updatePersonInfo(Person person) {
+		System.out.println(person);
+		dao.updatePersonInfo(person);
 	}
-	
-	
+
+	@Override
+	public void upPersonimgs(String newFileName, Integer id) {
+		dao.upPersonimgs(newFileName,id);
+	}
 }

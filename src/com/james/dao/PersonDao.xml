@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.james.dao.PersonDao">
+    <select id="loginPerson" resultType="Person">
+        select * from person where username = #{username} and password = #{password}
+    </select>
+
+    <select id="selectPersonByName" resultType="Person">
+        select * from person where username = #{username}
+    </select>
+
+    <insert id="registerPerson">
+        insert into person(username, password, sex, email) values (#{username},#{password},#{sex},#{email})
+    </insert>
+
+    <update id="updatePersonInfo">
+        update person set username=#{username},password=#{password},sex=#{sex} where id = #{id}
+    </update>
+
+   <update id="upPersonimgs">
+       update person set headimg=#{newFileName} where id=#{id}
+   </update>
+</mapper>

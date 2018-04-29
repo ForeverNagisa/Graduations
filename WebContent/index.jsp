@@ -51,16 +51,19 @@
 				</div>
 			</a> <a href="#">
 				<div class="personalinfo">
-					<div class="personalinfocss">
+					<div class="personalinfocss" id="about-us">
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 						<span class="homepagecss">了解我们</span>
 					</div>
 
 				</div>
 			</a>
+            <div class="netinfo">
+                <p>©2018 james P.D 欢迎你</p>
+            </div>
 		</div>
 		<%-- 中间瀑布流布局 --%>
-		<div class="msginfo">${msg }</div>
+		<div class="msginfo">${errormsg }</div>
 		<div class="waterfall">
 			<div class="logininfo">
 				<span>登陆后能干什么?</span>
@@ -88,10 +91,16 @@
 			</h1>
 			<img src="img/4.jpg" class="thumb">
 			</article>
+                <article class="white-panel">
+                    <h1>
+                        快点登陆吧~
+                    </h1>
+                    <img src="img/10.jpg" class="thumb">
+                </article>
 			 </section>
 		</div>
 		<!-- 弹窗用户登陆 -->
-		<form class="" action="${pageContext.request.contextPath }/login"
+		<form action="loginPerson.action"
 			method="post">
 			<div class="hide-center">
 				<div id="formhead">
@@ -109,13 +118,13 @@
 							style="border-bottom-right-radius: 5px;">
 					</div>
 					<div id="formfoot">
-						<button id="BSignIn" type="submit">登陆</button>
+						<input id="BSignIn" type="submit" value="登录"/>
 					</div>
 				</div>
 			</div>
 		</form>
 		<!-- 用户注册  用户名 密码 重复密码 性别 邮箱 验证码-->
-		<form class="" action="${pageContext.request.contextPath }/register"
+		<form class="" action="registerPerson.action"
 			method="post">
 			<div class="registered">
 				<div class="registered-entirety">
@@ -155,6 +164,19 @@
 				</div>
 			</div>
 		</form>
+
+        <%--关于我们--%>
+            <div class="win-about-us">
+                <div class="about-body">
+                    <div class="registered-title">关于我们</div>
+                    <button type="button" id="about-close">X</button>
+                    <div class="about-bottom">
+                        <p>路漫漫其修远兮</p>
+                        <p>吾将上下而求索</p>
+                        <p>加油!</p>
+                    </div>
+                </div>
+            </div>
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/pinterest_grid.js"></script>

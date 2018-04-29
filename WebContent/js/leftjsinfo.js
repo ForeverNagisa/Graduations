@@ -53,6 +53,14 @@ $("#head-close").click(function() {
   $(".heand-img").fadeOut("slow");
 });
 
+// 关于我们
+$('#about-us').click(function() {
+    $('.win-about-us').fadeIn('slow');
+});
+$("#about-close").click(function() {
+    $(".win-about-us").fadeOut("slow");
+});
+
 var password;
 var repassword;
 $("#passjudge").blur(function() {

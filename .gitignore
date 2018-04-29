@@ -3,3 +3,5 @@ WebContent/img/
 WebContent/upimg/
 out
 .idea
+.settings
+build

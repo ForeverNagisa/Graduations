@@ -1,18 +1,19 @@
 package com.james.service;
 
 import com.james.bean.Person;
+import org.springframework.stereotype.Service;
+
 
 public interface PersonService {
 
-	// 注册用户
-	public boolean register(Person person);
+	// 用户登录
+	Person loginPerson(Person person);
 
-	// 登录用户
-	public boolean login(Person person);
+	// 注册
+	boolean registerPerson(Person person);
 
 	// 修改用户信息
-	public boolean alterPeson(String name, Person person);
+	void updatePersonInfo(Person person);
 
-	// 查询用户头像地址
-	public String getHeadimg(Person person);
+    void upPersonimgs(String newFileName, Integer id);
 }
