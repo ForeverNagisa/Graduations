@@ -1,8 +1,9 @@
 package com.james.web;
 
+import com.james.bean.Article;
 import com.james.bean.Person;
+import com.james.service.AriticleService;
 import com.james.service.PersonService;
-import com.sun.org.apache.xpath.internal.operations.Mult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,12 +16,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class PersonController {
     @Autowired
     private PersonService service;
+    @Autowired
+    private AriticleService ariticleService;
 
     // 用户登录请求
     @RequestMapping("loginPerson.action")
@@ -29,9 +34,13 @@ public class PersonController {
         Person persons = service.loginPerson(person);
 
         if (persons != null){
+            // 查询该用户所有的文章
+            List<Article> perArt = ariticleService.selectAllAriticle();
+            System.out.println(perArt);
             String personImg = service.getPersonImg(person);
             persons.setHeadimg(personImg);
             session.setAttribute("persons",persons);
+            session.setAttribute("perArt",perArt);
             return "redirect:Personindex.jsp";
         }else {
             model.addAttribute("errormsg","用户名或密码错误");
@@ -62,7 +71,7 @@ public class PersonController {
     // 修改个人信息
     @RequestMapping("updatePersonInfo.action")
     public String updatePersonInfo(Person person,ModelMap model,HttpSession session){
-        session.invalidate();
+        service.updatePersonInfo(person);
         model.addAttribute("errormsg","修改成功! 请重新登录");
         return "index.jsp";
     }
@@ -77,13 +86,13 @@ public class PersonController {
             String suffix = fileName.substring(fileName.lastIndexOf('.'));
             String newFileName = new Date().getTime() + suffix;
             System.out.println("新文件名：" + newFileName);
+            // 把名字保存到数据库中
             service.upPersonimgs(newFileName,id);
             file.transferTo(new File(realPath + File.separator + newFileName));
             request.getSession().setAttribute("imgpath",newFileName);
             mv.setViewName("redirect:/Personindex.jsp");
             return mv;
         }
-        request.setAttribute("errormsg","文件上传错误");
         mv.setViewName("redirect:/Personindex.jsp");
         return mv;
 

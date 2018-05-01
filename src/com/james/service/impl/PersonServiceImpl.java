@@ -37,7 +37,7 @@ public class PersonServiceImpl implements PersonService{
 	// 修改用户信息
 	@Override
 	public void updatePersonInfo(Person person) {
-		System.out.println(person);
+
 		dao.updatePersonInfo(person);
 	}
 

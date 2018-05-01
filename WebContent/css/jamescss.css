@@ -466,6 +466,13 @@ body {
   padding-top: 10px;
   padding-left: 107px;
 }
+
+.upload-picture input{
+  position: relative;
+  left: 30px;
+  top: -20px;
+}
+
 .article-submit{
   padding-left: 500px;
   font-size: 20px;
@@ -565,4 +572,38 @@ body {
 .about-bottom p{
   font-size: 18px;
   color: #ff6e78;
+}
+
+
+/*
+文章样式
+
+*/
+
+.art_time{
+  float: right;
+  position: relative;
+  top: -40px;
+}
+
+.art_cont{
+  clear: both;
+  text-align: left;
+  text-indent: 2em;
+}
+
+.art_comment{
+  margin-top: 20px;
+}
+
+.art_comment input{
+  margin-left: 10px;
+  border: none;
+  outline: none;
+}
+
+.art_comment button{
+  border: none;
+  color: #3f9cff;
+  border-radius: 10px;
 }

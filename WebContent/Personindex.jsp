@@ -34,14 +34,14 @@
 			</div>
 			<div class="navleft">
 				<span class="Headimg" title="点击更换头像" id="upheandimg">
-					<c:if test="${!empty imgpath}">
-						<img src="upimg/${imgpath }"
-							 class="img-circle">
-					</c:if>
-					<c:if test="${empty imgpath}">
+					<%--<c:if test="${!empty imgpath}">--%>
+						<%--<img src="upimg/${imgpath }"--%>
+							 <%--class="img-circle">--%>
+					<%--</c:if>--%>
+					<%--<c:if test="${empty imgpath}">--%>
 						<img src="upimg/${empty persons.headimg ? "default.png" : persons.headimg }"
 							 class="img-circle">
-					</c:if>
+					<%--</c:if>--%>
 
 				</span><span class="navnamecut">|</span><a href="logonlogon.action"> <span> 注销登陆 </span></a>
 			</div>
@@ -81,6 +81,37 @@
 				</div>
 			</a>
 		</div>
+		<%-- 中间文章区域--%>
+		<div class="msginfo">${ariState }</div>
+		<c:if test="${!empty perArt}">
+			<c:forEach items="perArt" var="perArt">
+			<div class="waterfall">
+				<section id="gallery-wrapper">
+					<article class="white-panel">
+						<p style="font-size: 24px;font-weight: bold">
+								${persons.username }
+						</p>
+						<%--<span class="art_time">${perArt.art_time}</span>--%>
+						<%--<p class="art_cont">${perArt.art_content}</p>--%>
+						<%--<c:if test="${!empty perArt.art_img}">--%>
+							<%--<img src="upimg/${perArt.art_img }" class="thumb">--%>
+						<%--</c:if>--%>
+
+						<div class="art_comment">
+								${persons.username }:<input type="text" name="comm_name" placeholder="输入您的评论...">
+							<button >发表</button>
+						</div>
+
+
+					</article>
+
+				</section>
+			</div>
+			</c:forEach>
+		</c:if>
+
+
+
 
 		<%-- 右下角编辑文章图标 --%>
 		<div class="editor-article" id="article">
@@ -91,7 +122,7 @@
 
 	</div>
 
-	<%-- 修该个人信息 --%>
+	<%-- 修改个人信息 --%>
 	<form
 		action="updatePersonInfo.action"
 		method="post">
@@ -126,24 +157,26 @@
 	</form>
 
 	<%-- 编写文章弹窗 --%>
-	<form class="" action="" method="post">
+	<form class="" action="publishingArtice.action" method="post" enctype="multipart/form-data">
 		<div class="article-page">
 			<div class="article-pagebody">
 				<div class="registered-title">编辑属于你的文章</div>
 				<button type="button" id="article-close">X</button>
 				<div class="article-bottom">
 					<div class="article-username">
-						文章标题:<input type="text" size="28" name="article">
+						文章标题:<input type="text" size="28" name="art_title">
 					</div>
 					<div class="article-body">
-						<textarea placeholder="在这里输入你的文章内容" name="name" rows="8" cols="60"></textarea>
+						<textarea placeholder="在这里输入你的文章内容" name="art_content" rows="8" cols="60"></textarea>
 					</div>
 					<div class="upload-picture" title="添加图片">
 						<span class="glyphicon glyphicon-picture"></span>
+						<input type="file" name="art_img">
+						<input type="text" value="${persons.id}" name="person_id" style="display:none;">
 					</div>
 
 					<div class="article-submit">
-						<input class="article-s" disabled="true" value="发表" type="submit">
+						<input class="article-s" value="发表" type="submit">
 					</div>
 				</div>
 			</div>
@@ -158,7 +191,8 @@
 			<button type="button" id="head-close">X</button>
 			<div class="heand-bottom">
 				<div class="article-username">
-					上传头像:<input type="file" name="file">
+					上传头像:
+					<input type="file" name="file">
 				</div>
 				<input type="text" value="${persons.id}" name="id" style="display:none;">
 			<div class="heand-submit">
