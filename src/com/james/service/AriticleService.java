@@ -9,5 +9,5 @@ public interface AriticleService {
     boolean publishingArtice(Article article);
 
 
-    List<Article> selectAllAriticle();
+    List<Article> selectAllAriticle(int id);
 }

@@ -35,12 +35,11 @@ public class PersonController {
 
         if (persons != null){
             // 查询该用户所有的文章
-            List<Article> perArt = ariticleService.selectAllAriticle();
-            System.out.println(perArt);
+            List<Article> sperArt = ariticleService.selectAllAriticle(persons.getId());
             String personImg = service.getPersonImg(person);
             persons.setHeadimg(personImg);
             session.setAttribute("persons",persons);
-            session.setAttribute("perArt",perArt);
+            session.setAttribute("sperArt",sperArt);
             return "redirect:Personindex.jsp";
         }else {
             model.addAttribute("errormsg","用户名或密码错误");
@@ -80,12 +79,12 @@ public class PersonController {
     @RequestMapping("upPersonimgs.action")
     public ModelAndView upPersonimgs(@RequestParam("file") MultipartFile file, HttpServletRequest request, Integer id) throws IOException {
         ModelAndView mv = new ModelAndView();
+
         if (!file.isEmpty()){
-            String realPath = "/Users/lanou/Desktop/java/javaweb/Graduation/WebContent/upimg/";
+            String realPath = request.getServletContext().getRealPath("/upimg/");
             String fileName = file.getOriginalFilename();
             String suffix = fileName.substring(fileName.lastIndexOf('.'));
             String newFileName = new Date().getTime() + suffix;
-            System.out.println("新文件名：" + newFileName);
             // 把名字保存到数据库中
             service.upPersonimgs(newFileName,id);
             file.transferTo(new File(realPath + File.separator + newFileName));

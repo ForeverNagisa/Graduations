@@ -19,7 +19,6 @@ public class PersonServiceImpl implements PersonService{
 		return dao.loginPerson(person);
 	}
 
-
 	// 用户注册请求
 	@Override
 	public boolean registerPerson(Person person) {

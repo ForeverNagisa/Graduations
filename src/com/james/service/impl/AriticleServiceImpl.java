@@ -25,8 +25,9 @@ public class AriticleServiceImpl implements AriticleService {
 
     // 查询当前用户所有文章
     @Override
-    public List<Article> selectAllAriticle() {
-        List<Article> list = dao.selectAllAriticle();
+    public List<Article> selectAllAriticle(int id) {
+
+        List<Article> list = dao.selectAllAriticle(id);
         return list;
     }
 }

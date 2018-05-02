@@ -92,7 +92,7 @@
         left_out = 0;
       } else {
         left_out = (index % columns) * (article_width + self.options.padding_x);
-      //  (index % columns) * (article_width + self.options.padding_x)
+
       }
 
       $this.css({

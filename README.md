@@ -8,4 +8,4 @@
 
 使用ssm框架
 
-version 0.3.51bate
+version 0.6.32bate

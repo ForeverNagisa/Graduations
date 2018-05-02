@@ -7,5 +7,5 @@ import java.util.List;
 public interface AriticleDao {
     int publishingArtice(Article article);
 
-    List<Article> selectAllAriticle();
+    List<Article> selectAllAriticle(int id);
 }

@@ -3,11 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.james.dao.AriticleDao">
     <insert id="publishingArtice">
-        insert into article values
-              (null ,#{art_title} ,#{art_content} ,#{art_time} ,#{person_id} ,#{art_img})
+        insert into article(art_title, art_content, art_time, person_id, art_img) values
+              (#{art_title} ,#{art_content} ,#{art_time} ,#{person_id} ,#{art_img})
     </insert>
 
     <select id="selectAllAriticle" resultType="Article">
-        select * from article;
+        select * from article where person_id = #{id};
     </select>
 </mapper>

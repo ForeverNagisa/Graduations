@@ -19,7 +19,8 @@
 			<span class="glyphicon glyphicon-menu-hamburger navbutton"
 				aria-hidden="true"></span>
 			<div class="navname">
-				<span><a href="#">${persons.username }</span></a> <span
+				<span><a href="#">${persons.username }</a></span>
+				<span
 					class="navnamecut">|</span> <span>我的博客</span>
 			</div>
 			<div class="navsearch">
@@ -34,14 +35,14 @@
 			</div>
 			<div class="navleft">
 				<span class="Headimg" title="点击更换头像" id="upheandimg">
-					<%--<c:if test="${!empty imgpath}">--%>
-						<%--<img src="upimg/${imgpath }"--%>
-							 <%--class="img-circle">--%>
-					<%--</c:if>--%>
-					<%--<c:if test="${empty imgpath}">--%>
+					<c:if test="${!empty imgpath}">
+						<img src="upimg/${imgpath}"
+							 class="img-circle">
+					</c:if>
+					<c:if test="${empty imgpath}">
 						<img src="upimg/${empty persons.headimg ? "default.png" : persons.headimg }"
 							 class="img-circle">
-					<%--</c:if>--%>
+					</c:if>
 
 				</span><span class="navnamecut">|</span><a href="logonlogon.action"> <span> 注销登陆 </span></a>
 			</div>
@@ -83,31 +84,37 @@
 		</div>
 		<%-- 中间文章区域--%>
 		<div class="msginfo">${ariState }</div>
-		<c:if test="${!empty perArt}">
-			<c:forEach items="perArt" var="perArt">
+		<c:if test="${!empty sperArt}">
+
 			<div class="waterfall">
-				<section id="gallery-wrapper">
+					<section id="gallery-wrapper">
+			<c:forEach items="${sperArt}" var="perArt">
 					<article class="white-panel">
 						<p style="font-size: 24px;font-weight: bold">
-								${persons.username }
+								${perArt.art_title }
 						</p>
-						<%--<span class="art_time">${perArt.art_time}</span>--%>
-						<%--<p class="art_cont">${perArt.art_content}</p>--%>
-						<%--<c:if test="${!empty perArt.art_img}">--%>
-							<%--<img src="upimg/${perArt.art_img }" class="thumb">--%>
-						<%--</c:if>--%>
-
+						<span class="art_time">${perArt.art_time}</span>
+						<p class="art_cont">${perArt.art_content}</p>
+						<c:if test="${!empty perArt.art_img}">
+							<img src="upimg/${perArt.art_img }" class="thumb">
+						</c:if>
+						<div class="art_bottom">
 						<div class="art_comment">
-								${persons.username }:<input type="text" name="comm_name" placeholder="输入您的评论...">
+							<span style="font-size: 18px">${persons.username }:</span><input type="text" name="comm_name" size="50" placeholder="输入您的评论...">
 							<button >发表</button>
 						</div>
-
-
+							<div class="art_cle">
+								<span class="glyphicon glyphicon-thumbs-up goods"></span>
+							</div>
+						</div>
 					</article>
-
+			</c:forEach>
 				</section>
 			</div>
-			</c:forEach>
+			<%--<div>--%>
+				<%--${perArt}--%>
+			<%--</div>--%>
+
 		</c:if>
 
 
@@ -211,11 +218,11 @@
 <script type="text/javascript">
 	$(function() {
 		$("#gallery-wrapper").pinterest_grid({
-			no_columns : 4,
-			padding_x : 10,
-			padding_y : 10,
+			no_columns : 2,
+			padding_x : 30,
+			padding_y : 30,
 			margin_bottom : 50,
-			single_column_breakpoint : 700
+			single_column_breakpoint : 400
 		});
 	});
 </script>

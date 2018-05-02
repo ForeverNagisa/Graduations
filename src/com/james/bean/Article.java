@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class Article {
     private int art_id,person_id;
-    private String art_title,art_content,art_img;
-    private Date art_time;
+    private String art_title,art_content,art_img,art_time;
 
     public Article(){
 
@@ -58,11 +57,12 @@ public class Article {
         this.art_img = art_img;
     }
 
-    public Date getArt_time() {
+
+    public String getArt_time() {
         return art_time;
     }
 
-    public void setArt_time(Date art_time) {
+    public void setArt_time(String art_time) {
         this.art_time = art_time;
     }
 
