@@ -74,6 +74,7 @@
 				修改自己的账号信息
 			</h1>
 			<img src="img/1.jpg" class="thumb">
+
 			</article> <article class="white-panel">
 			<h1>
 				评论和点赞文章

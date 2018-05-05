@@ -34,7 +34,6 @@ public class PersonController {
         Person persons = service.loginPerson(person);
 
         if (persons != null){
-            // 查询该用户所有的文章
             List<Article> sperArt = ariticleService.selectAllAriticle(persons.getId());
             String personImg = service.getPersonImg(person);
             persons.setHeadimg(personImg);

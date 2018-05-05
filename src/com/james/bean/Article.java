@@ -1,20 +1,32 @@
 package com.james.bean;
 
-import java.util.Date;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
     private int art_id,person_id;
-    private String art_title,art_content,art_img,art_time;
+    private String art_title,art_content,art_img,art_time,art_person_name;
 
     public Article(){
 
     }
 
-    public Article(int art_id, int person_id, String art_title, String art_content) {
+    public Article(int art_id, int person_id, String art_title, String art_content, String art_img, String art_time, String art_person_name) {
         this.art_id = art_id;
         this.person_id = person_id;
         this.art_title = art_title;
         this.art_content = art_content;
+        this.art_img = art_img;
+        this.art_time = art_time;
+        this.art_person_name = art_person_name;
+    }
+
+    public String getArt_person_name() {
+        return art_person_name;
+    }
+
+    public void setArt_person_name(String art_person_name) {
+        this.art_person_name = art_person_name;
     }
 
     public int getArt_id() {
@@ -74,7 +86,8 @@ public class Article {
                 ", art_title='" + art_title + '\'' +
                 ", art_content='" + art_content + '\'' +
                 ", art_img='" + art_img + '\'' +
-                ", art_time=" + art_time +
+                ", art_time='" + art_time + '\'' +
+                ", art_person_name='" + art_person_name + '\'' +
                 '}';
     }
 }

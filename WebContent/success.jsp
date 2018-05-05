@@ -28,11 +28,11 @@
         <img src="img/succ.jpg">
         <div class="art">
             <p> 发表成功!三秒后将返回个人主页 </p>
-            <p> <a href="selectAllAriticle.action">如果三秒后没返回 请点我</a></p>
+            <p> <a href="Personindex.jsp">如果三秒后没返回 请点我</a></p>
         </div>
     </div>
 </body>
     <script type="text/javascript">
-        window.setTimeout("window.location='selectAllAriticle.action?id=${person_id}'",3000);
+        window.setTimeout("window.location='Personindex.jsp'",3000);
     </script>
 </html>

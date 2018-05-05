@@ -72,3 +72,7 @@ $("#repassjudge").blur(function() {
     alert("两次输入密码不一样");
   }
 });
+
+
+
+// 测试ajax

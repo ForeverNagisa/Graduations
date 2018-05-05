@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.james.dao.CommentDao">
+    <insert id="insertComment" >
+        insert into comment values (null ,#{article_id},#{person_id},#{date},#{comm_name},#{person_name})
+    </insert>
+
+    <select id="selectPersonArticle" resultType="Comments">
+        select * from comment where article_id = #{i}
+    </select>
+</mapper>

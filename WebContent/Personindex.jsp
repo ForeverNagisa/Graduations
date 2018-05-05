@@ -19,7 +19,8 @@
 			<span class="glyphicon glyphicon-menu-hamburger navbutton"
 				aria-hidden="true"></span>
 			<div class="navname">
-				<span><a href="#">${persons.username }</a></span>
+				<span ><a href="#" >${persons.username }</a></span>
+
 				<span
 					class="navnamecut">|</span> <span>我的博客</span>
 			</div>
@@ -84,38 +85,17 @@
 		</div>
 		<%-- 中间文章区域--%>
 		<div class="msginfo">${ariState }</div>
-		<c:if test="${!empty sperArt}">
+
 
 			<div class="waterfall">
 					<section id="gallery-wrapper">
-			<c:forEach items="${sperArt}" var="perArt">
-					<article class="white-panel">
-						<p style="font-size: 24px;font-weight: bold">
-								${perArt.art_title }
-						</p>
-						<span class="art_time">${perArt.art_time}</span>
-						<p class="art_cont">${perArt.art_content}</p>
-						<c:if test="${!empty perArt.art_img}">
-							<img src="upimg/${perArt.art_img }" class="thumb">
-						</c:if>
-						<div class="art_bottom">
-						<div class="art_comment">
-							<span style="font-size: 18px">${persons.username }:</span><input type="text" name="comm_name" size="50" placeholder="输入您的评论...">
-							<button >发表</button>
-						</div>
-							<div class="art_cle">
-								<span class="glyphicon glyphicon-thumbs-up goods"></span>
-							</div>
-						</div>
-					</article>
-			</c:forEach>
 				</section>
 			</div>
 			<%--<div>--%>
 				<%--${perArt}--%>
 			<%--</div>--%>
 
-		</c:if>
+
 
 
 
@@ -139,7 +119,7 @@
 				<button type="button" id="regclose">X</button>
 				<div class="registered-bottom">
 					<div class="registered-username">
-						用户名:<input type="text" size="28" name="username"
+						用户名:<input type="text" size="28" name="username" class="person_name"
 							value="${persons.username }">
 						<input type="text" value="${persons.id}" name="id" style="display:none;">
 					</div>
@@ -179,7 +159,8 @@
 					<div class="upload-picture" title="添加图片">
 						<span class="glyphicon glyphicon-picture"></span>
 						<input type="file" name="art_img">
-						<input type="text" value="${persons.id}" name="person_id" style="display:none;">
+						<input type="text" value="${persons.id}" name="person_id" id="person_id" style="display:none;">
+						<input type="text" value="${persons.username}" name="art_person_name" style="display:none;">
 					</div>
 
 					<div class="article-submit">
@@ -215,6 +196,8 @@
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/pinterest_grid.js"></script>
 <script type="text/javascript" src="js/leftjsinfo.js"></script>
+
+<script type="text/javascript" src="js/article.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$("#gallery-wrapper").pinterest_grid({
@@ -225,6 +208,9 @@
 			single_column_breakpoint : 400
 		});
 	});
+
+
+
 </script>
 
 </html>

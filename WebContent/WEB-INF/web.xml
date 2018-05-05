@@ -5,18 +5,26 @@
          version="4.0">
     <!-- 解决post 乱码问题-->
     <filter>
-        <filter-name>encodingFilter</filter-name>
+        <filter-name>encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
-        <filter-name>encodingFilter</filter-name>
+        <filter-name>encoding</filter-name>
         <url-pattern>*.action</url-pattern>
     </filter-mapping>
+
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
 
     <!-- 配置mvc核心过滤器-->
     <servlet>
