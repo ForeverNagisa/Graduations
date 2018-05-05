@@ -626,4 +626,62 @@ body {
   top: 3px;
 }
 
+.arts_a{
+  color: #2d2b2b;
+}
 
+
+/* 文章!!
+
+
+
+*/
+
+
+.arts_content{
+  position: relative;
+  width: 1300px;
+  left: 350px;
+  top: 100px;
+}
+
+.arts_title{
+  position: absolute;
+  left: 380px;
+}
+
+.arts_title span{
+  position: absolute;
+  left: 100px;
+  width: 200px;
+}
+
+.art_contex{
+  position: relative;
+  top: 100px;
+  text-indent: 2em;
+}
+
+.th{
+  margin-left: 200px;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.commet{
+  position: absolute;
+  top: 820px;
+  left: 150px;
+}
+
+.comm_info{
+  position: relative;
+  top: 90px;
+  left: 100px;
+}
+
+.comm_name{
+  position: relative;
+  top: -90px;
+}

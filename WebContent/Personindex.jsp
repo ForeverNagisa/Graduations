@@ -89,6 +89,20 @@
 
 			<div class="waterfall">
 					<section id="gallery-wrapper">
+
+						<c:forEach items="${sperArt}" var="art">
+						<article class="white-panel">
+							<p style="font-size: 24px;font-weight: bold"><a href="seletPersonByid.action?id=${art.art_id}" class="arts_a"> ${art.art_title}</a></p>
+							<span class="art_time">${art.art_time}</span>
+
+							<p class="art_cont">${art.art_content}</p>
+							<div class="art_bottom">
+								<c:if test="${!empty art.art_img}">
+									<img src="upimg/${art.art_img }" class="thumb">
+								</c:if>
+							</div>
+						</article>
+						</c:forEach>
 				</section>
 			</div>
 			<%--<div>--%>
@@ -197,7 +211,7 @@
 <script type="text/javascript" src="js/pinterest_grid.js"></script>
 <script type="text/javascript" src="js/leftjsinfo.js"></script>
 
-<script type="text/javascript" src="js/article.js"></script>
+<%--<script type="text/javascript" src="js/article.js"></script>--%>
 <script type="text/javascript">
 	$(function() {
 		$("#gallery-wrapper").pinterest_grid({

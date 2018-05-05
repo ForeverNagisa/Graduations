@@ -8,4 +8,6 @@ public interface AriticleDao {
     int publishingArtice(Article article);
 
     List<Article> selectAllAriticle(int id);
+
+    Article seletPersonByid(Integer id);
 }

@@ -10,4 +10,6 @@ public interface AriticleService {
 
 
     List<Article> selectAllAriticle(int id);
+
+    Article seletPersonByid(Integer id);
 }

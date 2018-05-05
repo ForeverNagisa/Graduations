@@ -30,4 +30,9 @@ public class AriticleServiceImpl implements AriticleService {
         List<Article> list = dao.selectAllAriticle(id);
         return list;
     }
+
+    @Override
+    public Article seletPersonByid(Integer id) {
+        return dao.seletPersonByid(id);
+    }
 }

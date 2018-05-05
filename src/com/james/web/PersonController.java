@@ -37,6 +37,7 @@ public class PersonController {
             List<Article> sperArt = ariticleService.selectAllAriticle(persons.getId());
             String personImg = service.getPersonImg(person);
             persons.setHeadimg(personImg);
+            System.out.println(persons);
             session.setAttribute("persons",persons);
             session.setAttribute("sperArt",sperArt);
             return "redirect:Personindex.jsp";

@@ -66,16 +66,23 @@ public class ArticleController {
     }
 
     // 查询个人用户的id
-    @RequestMapping(value = "selectAllAriticle.action",produces = "text/html;charset=UTF-8")
-    @ResponseBody
-    public String selectAllAriticle( String id){
-        int i = Integer.parseInt(id);
-
-        List<Article> list = service.selectAllAriticle(i);
-        String s = JSON.toJSONString(list);
-
-        return s;
+    @RequestMapping("selectAllAriticle.action")
+    public ModelAndView selectAllAriticle( Integer id, HttpSession session){
+        ModelAndView mv = new ModelAndView();
+        List<Article> sperArt = service.selectAllAriticle(id);
+        session.setAttribute("sperArt",sperArt);
+        mv.setViewName("redirect:/Personindex.jsp");
+        return mv;
     }
+
+    @RequestMapping("seletPersonByid.action")
+    public String seletPersonByid(Integer id,HttpSession session){
+       Article article = service.seletPersonByid(id);
+        System.out.println(article);
+       session.setAttribute("article",article);
+       return "redirect:/article.jsp";
+    }
+
 
 
 }

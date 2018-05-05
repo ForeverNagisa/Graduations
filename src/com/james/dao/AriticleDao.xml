@@ -10,4 +10,8 @@
     <select id="selectAllAriticle" resultType="Article">
         select * from article where person_id = #{id};
     </select>
+
+    <select id="seletPersonByid" resultType="Article">
+        select * from article where art_id = #{art_id}
+    </select>
 </mapper>
