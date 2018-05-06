@@ -88,31 +88,52 @@
 
 
 			<div class="waterfall">
+				<div class="logininfo">
+					<span>我的文章</span>
+				</div>
 					<section id="gallery-wrapper">
 
 						<c:forEach items="${sperArt}" var="art">
 						<article class="white-panel">
+
 							<p style="font-size: 24px;font-weight: bold"><a href="seletPersonByid.action?id=${art.art_id}" class="arts_a"> ${art.art_title}</a></p>
 							<span class="art_time">${art.art_time}</span>
 
 							<p class="art_cont">${art.art_content}</p>
 							<div class="art_bottom">
 								<c:if test="${!empty art.art_img}">
+
 									<img src="upimg/${art.art_img }" class="thumb">
+
 								</c:if>
 							</div>
 						</article>
 						</c:forEach>
+
+						<div class="logininfo">
+							<span>热门文章</span>
+						</div>
+						<c:forEach items="${articles}" var="art">
+							<article class="white-panel">
+								<p style="font-size: 24px;font-weight: bold"><a href="seletPersonByid.action?id=${art.art_id}" class="arts_a"> ${art.art_title}</a></p>
+								<span class="art_time">${art.art_time}</span>
+
+								<p class="art_cont">${art.art_content}</p>
+								<div class="art_bottom">
+									<c:if test="${!empty art.art_img}">
+
+										<img src="upimg/${art.art_img }" class="thumb">
+
+									</c:if>
+								</div>
+							</article>
+						</c:forEach>
+
 				</section>
 			</div>
 			<%--<div>--%>
 				<%--${perArt}--%>
 			<%--</div>--%>
-
-
-
-
-
 
 		<%-- 右下角编辑文章图标 --%>
 		<div class="editor-article" id="article">
@@ -215,7 +236,7 @@
 <script type="text/javascript">
 	$(function() {
 		$("#gallery-wrapper").pinterest_grid({
-			no_columns : 2,
+			no_columns : 1,
 			padding_x : 30,
 			padding_y : 30,
 			margin_bottom : 50,

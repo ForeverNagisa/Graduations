@@ -22,4 +22,16 @@ public class CommentServiceImpl implements CommentService {
     public List<Comments> selectPersonArticle(int i) {
         return dao.selectPersonArticle(i);
     }
+
+
+    @Override
+    public void deleteCommentById(Integer id) {
+        dao.deleteCommentById(id);
+    }
+
+    @Override
+    public void deletArtic(Integer id) {
+        dao.deletArtic(id);
+
+    }
 }

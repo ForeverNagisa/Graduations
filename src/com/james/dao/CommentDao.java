@@ -8,4 +8,8 @@ public interface CommentDao {
     void insertComment(Comments comments);
 
     List<Comments> selectPersonArticle(int i);
+
+    void deleteCommentById(Integer id);
+
+    void deletArtic(Integer id);
 }

@@ -12,4 +12,12 @@ public interface AriticleService {
     List<Article> selectAllAriticle(int id);
 
     Article seletPersonByid(Integer id);
+
+    List<Article> selectAriticle();
+
+    boolean selectIsLikes(Integer id, Integer pid);
+
+    void addLikes(Integer id, Integer pid);
+
+    int seletLikes(Integer id);
 }

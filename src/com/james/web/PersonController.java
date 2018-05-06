@@ -35,11 +35,13 @@ public class PersonController {
 
         if (persons != null){
             List<Article> sperArt = ariticleService.selectAllAriticle(persons.getId());
+            List<Article> articles =  ariticleService.selectAriticle();
             String personImg = service.getPersonImg(person);
             persons.setHeadimg(personImg);
             System.out.println(persons);
             session.setAttribute("persons",persons);
             session.setAttribute("sperArt",sperArt);
+            session.setAttribute("articles",articles);
             return "redirect:Personindex.jsp";
         }else {
             model.addAttribute("errormsg","用户名或密码错误");

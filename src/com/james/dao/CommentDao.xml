@@ -10,4 +10,12 @@
     <select id="selectPersonArticle" resultType="Comments">
         select * from comment where article_id = #{i}
     </select>
+
+    <delete id="deleteCommentById" >
+        delete from comment where comm_id = #{comm_id}
+    </delete>
+
+    <delete id="deletArtic">
+        delete from article where art_id=#{id}
+    </delete>
 </mapper>

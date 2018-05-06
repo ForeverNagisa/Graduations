@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -36,6 +37,7 @@ public class CommentController {
         return "selectComment.action";
     }
 
+    // 查询所有评论
     @RequestMapping("selectComment.action")
     public String selectComment(HttpServletRequest request){
         int i = Integer.parseInt(request.getParameter("article_id"));
@@ -45,6 +47,28 @@ public class CommentController {
     }
 
 
+
+    // 删除评论
+    @RequestMapping("deleteCommentById.action")
+    public ModelAndView deleteCommentById(Integer id, Integer pid){
+        service.deleteCommentById(id);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("selectAllAriticle.action?id="+pid);
+        return mv;
+    }
+
+
+
+    // 删除文章
+    @RequestMapping("deletArtic.action")
+    public ModelAndView deletArtic(Integer id,Integer pid){
+        service.deletArtic(id);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("selectAllAriticle.action?id="+pid);
+        return mv;
+    }
+
+    // ajax请求....暂时不用
     @RequestMapping(value = "selectPersonArticle.action",produces = "text/html;charset=UTF-8")
     @ResponseBody
     public String selectPersonArticle(String id){
@@ -55,4 +79,7 @@ public class CommentController {
 
         return s;
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.james.service.impl;
 
 import com.james.bean.Article;
+import com.james.bean.Likes;
 import com.james.dao.AriticleDao;
 import com.james.service.AriticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,30 @@ public class AriticleServiceImpl implements AriticleService {
     @Override
     public Article seletPersonByid(Integer id) {
         return dao.seletPersonByid(id);
+    }
+
+    @Override
+    public List<Article> selectAriticle() {
+        return dao.selectAriticle();
+    }
+
+    @Override
+    public boolean selectIsLikes(Integer id, Integer pid) {
+        Likes likes = dao.selectIsLikes(id,pid);
+        if (likes != null){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void addLikes(Integer id, Integer pid) {
+        dao.addLikes(id,pid);
+
+    }
+
+    @Override
+    public int seletLikes(Integer id) {
+        return dao.seletLikes(id);
     }
 }

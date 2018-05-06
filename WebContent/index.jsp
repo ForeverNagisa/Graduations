@@ -65,9 +65,7 @@
 		<%-- 中间瀑布流布局 --%>
 		<div class="msginfo">${errormsg }</div>
 		<div class="waterfall">
-			<div class="logininfo">
-				<span>登陆后能干什么?</span>
-			</div>
+
 			<section id="gallery-wrapper">
 		 <article class="white-panel">
 			<h1>

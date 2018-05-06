@@ -10,4 +10,7 @@ public interface CommentService {
     List<Comments> selectPersonArticle(int i);
 
 
+    void deleteCommentById(Integer id);
+
+    void deletArtic(Integer id);
 }

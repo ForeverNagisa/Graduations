@@ -7,6 +7,7 @@ import com.james.bean.Article;
 import com.james.bean.Comments;
 import com.james.bean.Person;
 import com.james.service.AriticleService;
+import com.james.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,8 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     AriticleService service;
+    @Autowired
+    CommentService commentService;
 
     // 添加文章
     @RequestMapping("publishingArtice.action")
@@ -65,7 +68,7 @@ public class ArticleController {
         return mv;
     }
 
-    // 查询个人用户的id
+    // 查询个人文章
     @RequestMapping("selectAllAriticle.action")
     public ModelAndView selectAllAriticle( Integer id, HttpSession session){
         ModelAndView mv = new ModelAndView();
@@ -75,13 +78,37 @@ public class ArticleController {
         return mv;
     }
 
+
+    // 查询用户文章和评论
     @RequestMapping("seletPersonByid.action")
     public String seletPersonByid(Integer id,HttpSession session){
-       Article article = service.seletPersonByid(id);
-        System.out.println(article);
-       session.setAttribute("article",article);
+        Article article = service.seletPersonByid(id);
+        List<Comments> comments = commentService.selectPersonArticle(id);
+        int numlikes = service.seletLikes(id);
+        System.out.println(comments);
+        session.setAttribute("numlike",numlikes);
+        session.setAttribute("comments",comments);
+        session.setAttribute("article",article);
        return "redirect:/article.jsp";
     }
+
+
+
+    // 点赞
+    @RequestMapping("likes.action")
+    public String likes(Integer id,Integer pid){
+        //  先查询数据库 此人是否点赞
+       boolean isLikes = service.selectIsLikes(id,pid);
+       if (!isLikes){
+           // 没点赞
+            service.addLikes(id,pid);
+            return "seletPersonByid.action?id="+id;
+       }
+       return "redirect:/article.jsp";
+    }
+
+
+
 
 
 

@@ -664,9 +664,10 @@ body {
 
 .th{
   margin-left: 200px;
-  width: 800px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+
 }
 
 .commet{
@@ -685,3 +686,51 @@ body {
   position: relative;
   top: -90px;
 }
+
+.line_01{
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  top: 220px;
+  padding: 0 20px 0;
+  margin: 20px 0;
+  line-height: 4px;
+  border-left: 400px solid #ddd;
+  border-right: 400px solid #ddd;
+  text-align: center;
+}
+
+.commts_css{
+  position: relative;
+  top: 220px;
+  left: 200px;
+}
+
+.com_date{
+  position: absolute;
+  left: 300px;
+
+}
+
+.arts_tit{
+  text-align: center;
+  position: relative;
+  left: 100px;
+}
+
+.deletcomm{
+  position: absolute;
+  left: 400px;
+}
+
+.deletart{
+  margin-left: 250px;
+}
+
+.likess{
+  margin-left: 200px;
+}
+
+
+
+

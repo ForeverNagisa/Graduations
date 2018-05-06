@@ -1,13 +1,13 @@
 package com.james.bean;
 
 public class Comments {
-    private int comment_id,article_id,person_id;
+    private int comm_id,article_id,person_id;
     private String date,comm_name,person_name;
 
     public Comments(){}
 
-    public Comments(int comment_id, int article_id, int person_id, String date, String comm_name, String person_name) {
-        this.comment_id = comment_id;
+    public Comments(int comm_id, int article_id, int person_id, String date, String comm_name, String person_name) {
+        this.comm_id = comm_id;
         this.article_id = article_id;
         this.person_id = person_id;
         this.date = date;
@@ -15,12 +15,12 @@ public class Comments {
         this.person_name = person_name;
     }
 
-    public int getComment_id() {
-        return comment_id;
+    public int getComm_id() {
+        return comm_id;
     }
 
-    public void setComment_id(int comment_id) {
-        this.comment_id = comment_id;
+    public void setComm_id(int comm_id) {
+        this.comm_id = comm_id;
     }
 
     public int getArticle_id() {
@@ -66,7 +66,7 @@ public class Comments {
     @Override
     public String toString() {
         return "Comments{" +
-                "comment_id=" + comment_id +
+                "comm_id=" + comm_id +
                 ", article_id=" + article_id +
                 ", person_id=" + person_id +
                 ", date='" + date + '\'' +

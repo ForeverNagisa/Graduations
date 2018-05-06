@@ -87,14 +87,21 @@
 
    <div class="arts_content">
        <div class="arts_title">
-           <h1>${article.art_title}</h1>
-           <span>${article.art_time}   作者:${article.art_person_name}</span>
+           <h1 class="arts_tit">${article.art_title}</h1>
+           <span >${article.art_time}   作者:${article.art_person_name}</span>
+           <span class="likess"><a href="likes.action?id=${article.art_id}&pid=${persons.id}">点赞[${numlike}]</a> </span>
+           <c:if test="${article.person_id == persons.id }">
+               <span class="deletart"><a href="deletArtic.action?id=${article.art_id}&pid=${persons.id}">删除</a></span>
+           </c:if>
+
        </div>
 
        <div class="art_contex">
            <p>${article.art_content}</p>
            <c:if test="${!empty article.art_img}">
+           <div style="width: 800px;height: 600px">
                <img src="upimg/${article.art_img }" class="th">
+           </div>
            </c:if>
        </div>
 
@@ -110,12 +117,17 @@
                <input type="submit" value="发布">
            </div>
        </form>
-
+       <div class="line_01">评论</div>
        <div class="commts_css">
        <c:forEach items="${comments}" var="comments">
+
            <div class="">
-               <span>${comments.person_name}:</span>
+               <span style="font-size: 20px;font-weight: bold">${comments.person_name}:</span>
                <span>${comments.comm_name}</span>
+               <span class="com_date">${comments.date}</span>
+               <c:if test="${article.person_id == persons.id }">
+               <a href="deleteCommentById.action?id=${comments.comm_id}&artid=${comments.article_id}" class="deletcomm">删除该评论</a>
+               </c:if>
            </div>
        </c:forEach>
        </div>

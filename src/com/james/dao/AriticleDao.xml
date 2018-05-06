@@ -14,4 +14,20 @@
     <select id="seletPersonByid" resultType="Article">
         select * from article where art_id = #{art_id}
     </select>
+
+    <select id="selectAriticle" resultType="Article">
+        select * from article
+    </select>
+
+    <select id="selectIsLikes" resultType="Likes">
+        select * from likes where li_art_id=#{id} and li_per_id=#{pid}
+    </select>
+
+    <insert id="addLikes">
+        insert into likes(li_per_id, li_art_id) values (#{pid},#{id})
+    </insert>
+
+    <select id="seletLikes" resultType="java.lang.Integer">
+        select count(*) from likes where li_art_id = #{id}
+    </select>
 </mapper>
