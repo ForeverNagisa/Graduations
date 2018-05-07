@@ -53,7 +53,7 @@ public class CommentController {
     public ModelAndView deleteCommentById(Integer id, Integer pid){
         service.deleteCommentById(id);
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("selectAllAriticle.action?id="+pid);
+        mv.setViewName("seletPersonByid.action?id="+pid);
         return mv;
     }
 

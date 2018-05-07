@@ -126,7 +126,7 @@
                <span>${comments.comm_name}</span>
                <span class="com_date">${comments.date}</span>
                <c:if test="${article.person_id == persons.id }">
-               <a href="deleteCommentById.action?id=${comments.comm_id}&artid=${comments.article_id}" class="deletcomm">删除该评论</a>
+               <a href="deleteCommentById.action?id=${comments.comm_id}&pid=${comments.article_id}" class="deletcomm">删除该评论</a>
                </c:if>
            </div>
        </c:forEach>

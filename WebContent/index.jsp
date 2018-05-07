@@ -23,14 +23,14 @@
 				<span>我的博客</span>
 			</div>
 			<div class="navsearch">
-				<form action="" class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" size="70"
-							placeholder="搜索文章"> <span class="gosearch">
-							<button class="searchbtn" type="button">搜索</button>
-						</span>
-					</div>
-				</form>
+				<%--<form action="" class="navbar-form navbar-left" role="search">--%>
+					<%--<div class="form-group">--%>
+						<%--<input type="text" class="form-control" size="70"--%>
+							<%--placeholder="搜索文章"> <span class="gosearch">--%>
+							<%--<button class="searchbtn" type="button">搜索</button>--%>
+						<%--</span>--%>
+					<%--</div>--%>
+				<%--</form>--%>
 			</div>
 			<div class="navleft">
 				<span class="navlogin" id="login"> 登陆 </span> <span
@@ -90,12 +90,12 @@
 			</h1>
 			<img src="img/4.jpg" class="thumb">
 			</article>
-                <article class="white-panel">
-                    <h1>
-                        快点登陆吧~
-                    </h1>
-                    <img src="img/10.jpg" class="thumb">
-                </article>
+                <%--<article class="white-panel">--%>
+                    <%--<h1>--%>
+                        <%--快点登陆吧~--%>
+                    <%--</h1>--%>
+                    <%--<img src="img/10.jpg" class="thumb">--%>
+                <%--</article>--%>
 			 </section>
 		</div>
 		<!-- 弹窗用户登陆 -->
