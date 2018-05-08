@@ -73,7 +73,11 @@ public class ArticleController {
     public ModelAndView selectAllAriticle( Integer id, HttpSession session){
         ModelAndView mv = new ModelAndView();
         List<Article> sperArt = service.selectAllAriticle(id);
+        List<Article> articles = service.selectAriticle();
         session.setAttribute("sperArt",sperArt);
+        session.setAttribute("articles",articles);
+        // 把所有文章 也更新成最新数据
+
         mv.setViewName("redirect:/Personindex.jsp");
         return mv;
     }
@@ -106,10 +110,5 @@ public class ArticleController {
        }
        return "redirect:/article.jsp";
     }
-
-
-
-
-
 
 }
